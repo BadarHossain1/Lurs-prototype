@@ -15,12 +15,7 @@ const Navbar = () => {
                     />
                 </Link>
                 <div className="flex items-center gap-6">
-                    <Link
-                        href="/lurssc"
-                        className="text-white hover:text-gray-300 transition-colors duration-200 font-semibold text-lg"
-                    >
-                        LURSSC
-                    </Link>
+                    
                     <div>
                         <Image
                             src="/Leading_University_Logo.png"

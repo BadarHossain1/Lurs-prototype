@@ -27,10 +27,10 @@ const HomeNavBar = () => {
 
     return (
         <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-b bg-black/30 backdrop-blur-sm ">
-            <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div className="container mx-auto px-4 py-0 flex items-center justify-between">
                 <div className="flex items-center gap-4">
                     <Link href="/" className="block lg:hidden">
-                        <Image src="/apple-touch-icon.png" alt="LURS" width={48} height={48} className="object-contain" />
+                        <Image src="/apple-touch-icon.png" alt="LURS" width={60} height={60} className="object-contain" />
                     </Link>
                     <Link href="/" className="hidden lg:flex items-center gap-3">
                         <Image src="/apple-touch-icon.png" alt="LURS" width={80} height={80} className="object-contain" />
@@ -41,15 +41,43 @@ const HomeNavBar = () => {
                 <div className="hidden lg:flex items-center gap-8">
                     <Link href="/" className="text-white hover:text-gray-200 transition-colors font-semibold">HOME</Link>
 
-                    <Dropdown title="WHAT WE DO" items={[{ href: '/about', label: 'About Us' }, { href: '/what-we-do', label: 'What We Do' }, { href: '/mission', label: 'Our Mission & Vision' }, { href: '/contact', label: 'Contact Us' }]} />
+                    <Dropdown
+                        title="WHAT WE DO"
+                        items={[
+                            { href: '/about', label: 'About Us' },
+                            { href: '/founding-committee', label: 'Founding Committee' },
+                            { href: '/advisors-committees', label: 'Advisors & Committees' },
+                        ]}
+                    />
 
-                    <Dropdown title="EVENTS" items={[{ href: '/events/ongoing', label: 'Ongoing Events' }, { href: '/events/upcoming', label: 'Upcoming Events' }, { href: '/events/previous', label: 'Previous Events' }]} />
+                    <Dropdown
+                        title="CONFERENCES"
+                        items={[
+                            { href: '/conferences/1st-student-research-conference', label: '1st Student Research Conference' },
+                            { href: '/conferences/2nd-student-research-conference', label: '2nd Student Research Conference' },
+                            { href: '/conferences/international-representation', label: 'International Representation' },
+                        ]}
+                    />
 
-                    <Dropdown title="OUR TEAM" items={[{ href: '/team/executive', label: 'Executive Committee' }, { href: '/team/founding', label: 'Founding Executive Committee' }, { href: '/team/convening', label: 'Convening Team' }]} />
+                    <Dropdown
+                        title="EVENTS & PROGRAMS"
+                        items={[
+                            { href: '/events/webinars-seminars', label: 'Webinars & Seminars' },
+                            { href: '/events/ceremonies-meetings', label: 'Ceremonies & Meetings' },
+                            { href: '/events/cultural-social', label: 'Cultural & Social Programs' },
+                            { href: '/events/national-days', label: 'National Days & Tributes' },
+                        ]}
+                    />
 
-                    <Dropdown title="PROJECTS" items={[{ href: '/projects/ongoing', label: 'Ongoing Projects' }, { href: '/projects/upcoming', label: 'Upcoming Projects' }]} />
+                    <Dropdown
+                        title="NEWS & ACHIEVEMENTS"
+                        items={[
+                            { href: '/news/newsletters', label: 'Newsletter Publications' },
+                            { href: '/news/donations', label: 'Donation & Social Contributions' },
+                        ]}
+                    />
 
-                    <Dropdown title="MEMBERSHIP" items={[{ href: '/membership/join', label: 'Join Now' }, { href: '/membership/how-to-join', label: 'How to Join' }, { href: '/membership/benefits', label: 'Membership Benefits' }, { href: '/membership/testimonials', label: 'What Our Members Say' }]} />
+                    <Link href="/contact" className="text-white hover:text-gray-200 transition-colors font-semibold">CONTACT</Link>
                 </div>
 
                 {/* Right side */}
@@ -70,49 +98,46 @@ const HomeNavBar = () => {
                     <div className="absolute left-0 top-full w-full bg-white text-black shadow-lg lg:hidden">
                         <div className="p-4 space-y-3">
                             <Link href="/" className="block py-2 font-semibold">HOME</Link>
+
                             <details>
                                 <summary className="py-2 font-semibold">WHAT WE DO</summary>
                                 <div className="pl-4">
                                     <Link href="/about" className="block py-2">About Us</Link>
-                                    <Link href="/what-we-do" className="block py-2">What We Do</Link>
-                                    <Link href="/mission" className="block py-2">Our Mission & Vision</Link>
-                                    <Link href="/contact" className="block py-2">Contact Us</Link>
-                                </div>
-                            </details>
-                            <details>
-                                <summary className="py-2 font-semibold">EVENTS</summary>
-                                <div className="pl-4">
-                                    <Link href="/events/ongoing" className="block py-2">Ongoing Events</Link>
-                                    <Link href="/events/upcoming" className="block py-2">Upcoming Events</Link>
-                                    <Link href="/events/previous" className="block py-2">Previous Events</Link>
-                                </div>
-                            </details>
-                            <details>
-                                <summary className="py-2 font-semibold">OUR TEAM</summary>
-                                <div className="pl-4">
-                                    <Link href="/team/executive" className="block py-2">Executive Committee</Link>
-                                    <Link href="/team/founding" className="block py-2">Founding Executive Committee</Link>
-                                    <Link href="/team/convening" className="block py-2">Convening Team</Link>
-                                </div>
-                            </details>
-                            <details>
-                                <summary className="py-2 font-semibold">PROJECTS</summary>
-                                <div className="pl-4">
-                                    <Link href="/projects/ongoing" className="block py-2">Ongoing Projects</Link>
-                                    <Link href="/projects/upcoming" className="block py-2">Upcoming Projects</Link>
-                                </div>
-                            </details>
-                            <details>
-                                <summary className="py-2 font-semibold">MEMBERSHIP</summary>
-                                <div className="pl-4">
-                                    <Link href="/membership/join" className="block py-2">Join Now</Link>
-                                    <Link href="/membership/how-to-join" className="block py-2">How to Join</Link>
-                                    <Link href="/membership/benefits" className="block py-2">Membership Benefits</Link>
-                                    <Link href="/membership/testimonials" className="block py-2">What Our Members Say</Link>
+                                    <Link href="/founding-committee" className="block py-2">Founding Committee</Link>
+                                    <Link href="/advisors-committees" className="block py-2">Advisors & Committees</Link>
                                 </div>
                             </details>
 
-                            <Link href="/lurssc" className="block mt-2 py-2 bg-[var(--primary)] text-white text-center rounded">LURSSC</Link>
+                            <details>
+                                <summary className="py-2 font-semibold">CONFERENCES</summary>
+                                <div className="pl-4">
+                                    <Link href="/conferences/1st-student-research-conference" className="block py-2">1st Student Research Conference</Link>
+                                    <Link href="/lurrsc" className="block py-2">2nd Student Research Conference</Link>
+                                    <Link href="/conferences/international-representation" className="block py-2">International Representation</Link>
+                                </div>
+                            </details>
+
+                            <details>
+                                <summary className="py-2 font-semibold">EVENTS & PROGRAMS</summary>
+                                <div className="pl-4">
+                                    <Link href="/events/webinars-seminars" className="block py-2">Webinars & Seminars</Link>
+                                    <Link href="/events/ceremonies-meetings" className="block py-2">Ceremonies & Meetings</Link>
+                                    <Link href="/events/cultural-social" className="block py-2">Cultural & Social Programs</Link>
+                                    <Link href="/events/national-days" className="block py-2">National Days & Tributes</Link>
+                                </div>
+                            </details>
+
+                            <details>
+                                <summary className="py-2 font-semibold">NEWS & ACHIEVEMENTS</summary>
+                                <div className="pl-4">
+                                    <Link href="/news/newsletters" className="block py-2">Newsletter Publications</Link>
+                                    <Link href="/news/donations" className="block py-2">Donation & Social Contributions</Link>
+                                </div>
+                            </details>
+
+                            <Link href="/contact" className="block py-2 font-semibold">CONTACT US</Link>
+
+
                         </div>
                     </div>
                 )}
