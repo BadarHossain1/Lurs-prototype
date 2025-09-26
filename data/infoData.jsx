@@ -1,0 +1,147 @@
+export const data = [
+    {
+        id: 1,
+        title: "Call for Abstract",
+        type: "only-description",
+        description: [
+            "The Leading University Research Society (LURS) cordially invites specially students and young researchers from diverse disciplines to submit original research for presentation at the “LURS 2nd Student Research Conference 2025” (LURSSRC-2025). This national-level conference will serve as a prestigious interdisciplinary platform for the exchange of ideas and promotion of impactful research across domains such as Engineering, Science and Technology, Social Science, Political Science, Agriculture, Language and Literature etc. Participants will gain insights into how innovative research contributes to academic progression and addresses real-world challenges.",
+        ],
+    },
+    {
+        id: 2,
+        title: "Segment of the Conference",
+        type: "array-numbered",
+        description: ["Oral Presentation", "Poster Presentation"],
+    },
+    {
+        id: 3,
+        title: "Scope of the Conference",
+        type: "array-bulleted",
+        description: [
+            "Engineering, Science and Technology",
+            "Computer Science and Artificial Intelligence",
+            "Life Science & Agriculture",
+            "Social Sciences and Public Policy",
+            "Language, Literature, and Cultural Studies",
+            "Economics, Business, and Entrepreneurship",
+            "Education and Development Studies",
+            "Environmental and Sustainability Research",
+        ],
+    },
+    {
+        id: 4,
+        title: "Extended Abstract Submission Guidelines",
+        type: "array-bulleted",
+        description: [
+            "Title, Authors & Affiliations: The extended abstract must include the title, the names and affiliations of all authors, and the presenter's name should be underlined.",
+            "Keywords: Three to five keywords of the extended abstract should be provided.",
+            "The extended abstract should contain 700-1000 words, including the Introduction, Methodology, Results, and Conclusion sections. References are not counted in the word limit.",
+            "Referencing Style: IEEE style for Engineering, Science and Technology; APA style for (American Psychological Association) for other discipline.",
+            "File Name: (LastName_FirstName_AbstractTitle); File Format- Microsoft Word (.docx) + PDF (.pdf)",
+            "Font: Times New Roman",
+            "Font Size: 12",
+            "Submissions must be original and unpublished. All submissions must be written in English.",
+            "The participants can participate on their own or cross-university as well. And a maximum of three participants in a team.",
+            "All abstracts will undergo rigorous peer review by an academic panel.",
+            "Time allocated for oral presentation: approximately 5 minutes.",
+        ],
+    },
+    {
+        id: 5,
+        title: "Poster Presentation Guidelines",
+        type: "array-bulleted",
+        description: [
+            "Title: Ensure it is clear, concise, and easy to read from a distance ",
+            "Authors & Affiliations: Include names, institutions, and contact info.",
+            "Sections: Organize content into Introduction (background & objectives), Methods (brief and visual if possible), Results (key findings with visuals), Discussion (interpretation and implications), Conclusion (summary and future direction), and optional Acknowledgments and References.",
+            "Size: Use a standard poster size; Layout: Use a clean, logical structure (e.g., 2-4 columns)",
+            "Font Sizes: Use clear fonts and scale text sizes so the title, headings, and body are easily readable from a distance.",
+            "Time allocated for poster presentation: approximately 2-3 minutes.",
+        ],
+    },
+    {
+        id: 6,
+        title: "Important Dates",
+        type: "array-bulleted",
+        description: [
+            "Extended Abstract Submission Deadline: June 30, 2025",
+            "Notification of Acceptance: July 15, 2025",
+            "Conference Date: August 9, 2025",
+            "Registration Deadline for Extended Abstract Submission: June 30, 2025",
+            "Registration Deadline for Poster Presentation: July 15, 2025",
+            "Registration Deadline for Conference Participation: July 25, 2025",
+        ],
+    },
+    {
+        id: 12,
+        title: "Certificates and Awards",
+        type: "array-bulleted",
+        description: [
+            "Certificates for all",
+            "Best Abstract and Poster: Prize Money 7500 BDT+",
+        ],
+    },
+    {
+        id: 7,
+        title: "Registration Fees",
+        type: "array-numbered",
+        description: [
+            "For Abstract Registration (Per individual 500 BDT and two person 800 BDT and three person 1000 BDT)",
+            "For Poster Presentation (Per individual 350 BDT and two person 550 BDT)",
+            "Conference participants (Per individual 200 BDT)",
+            "International participants are requested to contact us via email.",
+        ],
+    },
+    // {
+    //     id: 8,
+    //     title: "Submission interface",
+    //     type: "only-submission",
+    //     description:
+    //         "The <a class='text-darkBlue transition-all hover:underline' href='https://easychair.org' target='_blank'>EasyChair</a> service is used for managing the peer-reviewing process for this conference. This platform is provided by <a class='text-darkBlue transition-all hover:underline' href='https://easychair.org' target='_blank'>EasyChair Ltd</a> and supports the entire workflow of academic conference management, including submission, reviewing, and decision-making. While <a class='text-darkBlue transition-all hover:underline' href='https://easychair.org' target='_blank'>EasyChair</a> offers basic services for free, some features may require a fee, which helps cover operational costs, infrastructure, and continued development and support of the system.",
+    // },
+    {
+        id: 9,
+        title: "Registration Process",
+        type: "array-numbered",
+        description: [
+            "For Abstract Submission: <a href='https://forms.gle/YcHU6a89eKwA2Vvi8' target='_blank'>Click Here</a>",
+            "For Poster Presentation: <a href='https://forms.gle/H3q8J3viSs5CT9Qk8' target='_blank'>Click Here</a>",
+            "For Conference Participation: <a href='https://forms.gle/3cSSaj77etkWCMzp7' target='_blank'>Click Here</a>",
+        ],
+        note: "[N.B: After payment, submit your abstract via the link (google form) and fill up the google form with transaction ID]",
+    },
+    {
+        id: 10,
+        title: "Payment",
+        type: "only-description",
+        description: "Bkash: 01646-035041",
+    },
+    {
+        id: 11,
+        title: "Refund Policy",
+        type: "array-numbered",
+        description: [
+            "Full Refund: If the abstract is rejected and you choose not to participate.",
+            "40% Refund: If the abstract is rejected but you still choose to participate.",
+        ],
+    },
+    // {
+    //     id: 9,
+    //     title: "Contact",
+    //     type: "array-bulleted",
+    //     description: [
+    //         "For any sort of queries please feel free to reach out via,",
+    //         "Email: lurs@lus.ac.bd",
+    //         "Contact: +8801780-592593, +8801601-082124, +8801731-979225,",
+    //         "Facebook: https://www.facebook.com/lursbd",
+    //     ],
+    // },
+    // {
+    //     id: 11,
+    //     title: "",
+    //     type: "only-description",
+    //     description: [
+    //         "LURS (Leading University Research Society) proudly hosts this national-level platform to celebrate and empower research that shapes the unseen future. Join us in this intellectual journey toward innovation and discovery.",
+    //     ],
+    // },
+];
