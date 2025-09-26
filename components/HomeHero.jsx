@@ -6,6 +6,8 @@ const HomeHero = () => {
         <div className="hero-bg h-screen overflow-hidden relative">
             <div className="absolute inset-0 bg-gradient-to-tr from-darkBlue to-[#000000]  opacity-70 z-20"></div>
             <Slider />
+            {/* bluish translucent panel behind the text to improve contrast */}
+            <div className="absolute left-1/2 -translate-x-1/2 top-1/3 md:top-1/4 w-11/12 md:w-3/4 lg:w-2/3 h-56 md:h-64 bg-[rgba(23,107,152,0.32)] rounded-3xl backdrop-blur-sm z-25 pointer-events-none" />
             <div className="container max-w-7xl mx-auto px-4 py-2 flex justify-center items-center w-full h-full text-white  z-30 absolute top-0 left-1/2 -translate-x-1/2 pt-32 max-sm:pt-40">
                 <div className="max-w-5xl text-center mx-auto w-full">
 

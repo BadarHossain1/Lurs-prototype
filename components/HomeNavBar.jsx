@@ -112,7 +112,7 @@ const HomeNavBar = () => {
                                 <summary className="py-2 font-semibold">CONFERENCES</summary>
                                 <div className="pl-4">
                                     <Link href="/conferences/1st-student-research-conference" className="block py-2">1st Student Research Conference</Link>
-                                    <Link href="/lurrsc" className="block py-2">2nd Student Research Conference</Link>
+                                    <Link href="/conferences/2nd-student-research-conference" className="block py-2">2nd Student Research Conference</Link>
                                     <Link href="/conferences/international-representation" className="block py-2">International Representation</Link>
                                 </div>
                             </details>
@@ -135,8 +135,7 @@ const HomeNavBar = () => {
                                 </div>
                             </details>
 
-                            <Link href="/contact" className="block py-2 font-semibold">CONTACT US</Link>
-
+                            <Link href="/contact" className="block py-2 font-semibold">CONTACT</Link>
 
                         </div>
                     </div>
