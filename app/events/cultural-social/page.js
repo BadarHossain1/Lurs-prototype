@@ -1,0 +1,460 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { Calendar, Users, Heart, Globe, Sparkles, Star, Award, MapPin } from "lucide-react";
+
+const CulturalSocialPage = () => {
+    const [isVisible, setIsVisible] = useState({});
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.target && entry.target.id) {
+                        if (entry.isIntersecting) {
+                            setIsVisible((prev) => ({ ...prev, [entry.target.id]: true }));
+                        }
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        const elements = document.querySelectorAll('[data-animate]');
+        elements.forEach((el) => observer.observe(el));
+
+        const fallback = setTimeout(() => {
+            elements.forEach((el) => {
+                if (el && el.id) {
+                    setIsVisible((prev) => ({ ...prev, [el.id]: true }));
+                }
+            });
+        }, 700);
+
+        return () => {
+            observer.disconnect();
+            clearTimeout(fallback);
+        };
+    }, []);
+
+    return (
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-sky-50">
+            {/* Hero Section */}
+            <section className="relative pt-32 pb-20 min-h-[85vh] flex items-center justify-center overflow-hidden">
+                {/* Animated Background Elements */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-20 left-10 w-32 h-32 bg-[var(--primary)]/10 rounded-full animate-pulse"></div>
+                    <div className="absolute top-40 right-20 w-24 h-24 bg-sky-200/20 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+                    <div className="absolute bottom-32 left-1/4 w-20 h-20 bg-sky-200/25 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                    <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-blue-200/15 rounded-full animate-bounce" style={{ animationDelay: '0.3s' }}></div>
+                </div>
+
+                {/* Floating Icons */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <Globe className="absolute top-1/4 left-1/5 w-10 h-10 text-[var(--primary)]/30 animate-float" />
+                    <Heart className="absolute top-1/3 right-1/4 w-8 h-8 text-sky-500/40 animate-float-delayed" />
+                    <Sparkles className="absolute bottom-1/3 left-1/3 w-7 h-7 text-sky-500/35 animate-pulse" />
+                    <Star className="absolute bottom-1/4 right-1/5 w-9 h-9 text-sky-500/30 animate-float" />
+                </div>
+
+                {/* Hero Content */}
+                <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+                    <div className="animate-fade-in-up">
+                        {/* Rotating Globe Icons */}
+                        <div className="flex items-center justify-center gap-6 mb-8">
+                            <Globe className="w-14 h-14 text-[var(--primary)] animate-spin-slow" />
+                            <div className="h-14 w-1 bg-gradient-to-b from-[var(--primary)] via-sky-400 to-transparent rounded-full"></div>
+                            <Heart className="w-12 h-12 text-sky-500 animate-pulse" />
+                            <div className="h-12 w-0.5 bg-gradient-to-b from-sky-400 to-transparent rounded-full"></div>
+                            <Sparkles className="w-10 h-10 text-sky-600" />
+                        </div>
+
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-[var(--primary)] via-sky-500 to-blue-500 bg-clip-text text-transparent animate-gradient">
+                            Cultural & Social
+                        </h1>
+                        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-sky-500 via-blue-500 to-[var(--primary)] bg-clip-text text-transparent animate-gradient">
+                            Programs
+                        </h2>
+
+                        <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed">
+                            Celebrating unity, culture, and togetherness through meaningful gatherings that strengthen our community bonds
+                        </p>
+
+                        {/* Feature Cards */}
+                        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                            <div className="group bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/50">
+                                <div className="w-16 h-16 bg-gradient-to-br from-[var(--primary)]/20 to-sky-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                                    <Heart className="w-8 h-8 text-[var(--primary)] animate-pulse" />
+                                </div>
+                                <h3 className="text-xl font-bold text-[var(--primary)] mb-2">Unity Events</h3>
+                                <p className="text-gray-600 text-sm">Bringing together our community in celebration and gratitude</p>
+                            </div>
+
+                            <div className="group bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/50">
+                                <div className="w-16 h-16 bg-gradient-to-br from-sky-100 to-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                                    <Sparkles className="w-8 h-8 text-sky-600" />
+                                </div>
+                                <h3 className="text-xl font-bold text-sky-600 mb-2">Cultural Programs</h3>
+                                <p className="text-gray-600 text-sm">Celebrating traditions and fostering cultural appreciation</p>
+                            </div>
+
+                            <div className="group bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/50">
+                                <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-sky-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                                    <Users className="w-8 h-8 text-blue-600 animate-pulse" />
+                                </div>
+                                <h3 className="text-xl font-bold text-blue-600 mb-2">Social Gatherings</h3>
+                                <p className="text-gray-600 text-sm">Building lasting connections through shared experiences</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Divider */}
+            <div className="w-full h-1 bg-gradient-to-r from-transparent via-[var(--primary)]/30 to-transparent"></div>
+
+            {/* Events Section */}
+            <section className="py-20 px-4">
+                <div className="max-w-7xl mx-auto">
+
+                    {/* Section Header */}
+                    <div
+                        id="events-header"
+                        data-animate
+                        className={`text-center mb-16 transform transition-all duration-1000 ${isVisible['events-header'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                            }`}
+                    >
+                        <h3 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[var(--primary)] to-sky-600 bg-clip-text text-transparent">
+                            Our Cultural Journey
+                        </h3>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Moments of togetherness that celebrate our values and strengthen our bonds
+                        </p>
+                    </div>
+
+                    {/* Event 1: Iftar Mahfil 2023 - Different Layout Style (moved first) */}
+                    <div
+                        id="event-2023"
+                        data-animate
+                        className={`mb-24 transform transition-all duration-1000 ${isVisible['event-2023'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-80'
+                            }`}
+                    >
+                        <div className="relative">
+                            {/* Background Decoration */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-sky-50 rounded-3xl transform -rotate-1"></div>
+
+                            <div className="relative bg-white/90 backdrop-blur-lg rounded-3xl overflow-hidden shadow-2xl border border-blue-100 hover:shadow-3xl transition-all duration-700">
+
+                                {/* Top Banner */}
+                                <div className="relative h-48 md:h-64 overflow-hidden">
+                                    <Image
+                                        src="https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                                        alt="Iftar Mahfil 2023"
+                                        fill
+                                        className="object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+
+                                    {/* Floating Date Badge */}
+                                    <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md rounded-2xl px-6 py-3 shadow-xl">
+                                        <div className="flex items-center gap-3">
+                                            <Calendar className="w-5 h-5 text-[var(--primary)]" />
+                                            <span className="font-bold text-gray-900">15 April 2023</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Content Section */}
+                                <div className="p-8 md:p-12">
+
+                                    {/* Title */}
+                                    <div className="mb-8">
+                                        <h4 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 hover:text-[var(--primary)] transition-colors duration-300">
+                                            First Iftar Mahfil - LURS Inaugural Event
+                                        </h4>
+                                        <div className="flex items-center gap-2 text-sky-600">
+                                            <MapPin className="w-4 h-4" />
+                                            <span className="font-medium">Spicy Restaurant, Sylhet</span>
+                                        </div>
+                                    </div>
+
+                                    {/* Two Column Layout */}
+                                    <div className="grid md:grid-cols-3 gap-8">
+
+                                        {/* Main Content - 2 columns */}
+                                        <div className="md:col-span-2 space-y-4">
+                                            <p className="text-gray-700 leading-relaxed">
+                                                Leading University Research Society (LURS) organized a first event through first Iftar Mahfil today; 15th April 2023. Our honorable LURS Advisor &apos;Shafkat Kibria&apos; sir, honorable university Proctor, &apos;Rana M. Luthfur Rahman Pir&apos; sir, and members of LURS were present there.
+                                            </p>
+                                            <p className="text-gray-700 leading-relaxed">
+                                                The purpose of the Mahfil was fulfilled by gathering together over a memorable Iftar to celebrate the joy of Ramadan, and we discussed our upcoming plans for our club and the steps required to take it forward.
+                                            </p>
+                                            <p className="text-gray-700 leading-relaxed">
+                                                We are grateful to our LURS Advisor sir and university Proctor sir for their valuable time and wisdom, and their dedication to our club and its enrichment. We believe that Iftar Mahfil is just a stepping stone to building a larger family of researchers who will enrich our society with their accomplishments.
+                                            </p>
+                                            <p className="text-gray-700 leading-relaxed">
+                                                Overall, the Iftar Mahfil arranged by LURS was a successful event at Spicy Restaurant, Sylhet. Which brought together the members of the society and strengthened the spirit of brotherhood and unity among them.
+                                            </p>
+                                        </div>
+
+                                        {/* Sidebar - 1 column */}
+                                        <div className="space-y-4">
+
+                                            {/* Highlights Box */}
+                                            <div className="bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-6 border border-blue-100">
+                                                <h5 className="font-bold text-lg text-gray-900 mb-4 flex items-center gap-2">
+                                                    <Sparkles className="w-5 h-5 text-sky-600 animate-pulse" />
+                                                    Event Highlights
+                                                </h5>
+                                                <ul className="space-y-3 text-sm text-gray-700">
+                                                    <li className="flex items-start gap-2">
+                                                        <div className="w-2 h-2 rounded-full bg-sky-500 mt-1.5"></div>
+                                                        <span>First official LURS event</span>
+                                                    </li>
+                                                    <li className="flex items-start gap-2">
+                                                        <div className="w-2 h-2 rounded-full bg-sky-500 mt-1.5"></div>
+                                                        <span>Ramadan celebration with unity</span>
+                                                    </li>
+                                                    <li className="flex items-start gap-2">
+                                                        <div className="w-2 h-2 rounded-full bg-sky-500 mt-1.5"></div>
+                                                        <span>Strategic planning discussions</span>
+                                                    </li>
+                                                    <li className="flex items-start gap-2">
+                                                        <div className="w-2 h-2 rounded-full bg-sky-500 mt-1.5"></div>
+                                                        <span>Building research community</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            {/* Image Gallery Mini */}
+                                            <div className="grid grid-cols-2 gap-2">
+                                                <div className="relative aspect-square rounded-xl overflow-hidden group/img">
+                                                    <Image
+                                                        src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400"
+                                                        alt="Event moment 1"
+                                                        fill
+                                                        className="object-cover group-hover/img:scale-110 transition-transform duration-500"
+                                                    />
+                                                </div>
+                                                <div className="relative aspect-square rounded-xl overflow-hidden group/img">
+                                                    <Image
+                                                        src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=400"
+                                                        alt="Event moment 2"
+                                                        fill
+                                                        className="object-cover group-hover/img:scale-110 transition-transform duration-500"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Event 2: Iftar Mahfil 2025 - Card Style with Image Gallery (moved second) */}
+                    <div
+                        id="event-2025"
+                        data-animate
+                        className={`transform transition-all duration-1000 ${isVisible['event-2025'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-80'
+                            }`}
+                    >
+                        <div className="bg-white/70 backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-700 group">
+
+                            {/* Event Header */}
+                            <div className="relative bg-gradient-to-r from-[var(--primary)] via-sky-600 to-blue-600 text-white p-8 md:p-12">
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                                <div className="relative z-10">
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <Calendar className="w-6 h-6" />
+                                        <span className="text-lg font-semibold">20 March 2025</span>
+                                    </div>
+                                    <h4 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 group-hover:scale-105 transition-transform duration-300">
+                                        LURS Iftar Mahfil 2025
+                                    </h4>
+                                    <p className="text-xl md:text-2xl text-blue-100 font-medium">
+                                        A Heartwarming Gathering of Scholars!
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Content Grid */}
+                            <div className="grid lg:grid-cols-2 gap-8 p-8 md:p-12">
+
+                                {/* Left: Content */}
+                                <div className="space-y-6">
+                                    <div className="flex items-start gap-3">
+                                        <div className="w-1 h-full bg-gradient-to-b from-[var(--primary)] to-blue-600 rounded-full"></div>
+                                        <div className="flex-1 space-y-4">
+                                            <p className="text-gray-700 leading-relaxed">
+                                                Alhamdulillah, the Leading University Research Society (LURS) successfully organized a beautiful Iftar Mahfil, bringing together researchers, faculty members, and students in an evening filled with unity, gratitude, and togetherness.
+                                            </p>
+                                            <p className="text-gray-700 leading-relaxed">
+                                                The event was more than just breaking the fast; it was a celebration of our shared commitment to knowledge, collaboration, and the values that strengthen our academic community. The presence of distinguished guests, dedicated members, and aspiring researchers made the evening truly special.
+                                            </p>
+                                            <p className="text-gray-700 leading-relaxed">
+                                                Our Honourable Adviser Dr.Safkat Kibria sir, Co-Adviser MD. Jamaner Rahaman sir and Our Special guest Md. Ebrahim Hussain sir and Founding President Abdus Samad Sumo was present in this iftar mahfil.
+                                            </p>
+                                            <p className="text-gray-700 leading-relaxed">
+                                                Heartfelt thanks to everyone who attended and contributed to making this event a success! Your participation and support inspire us to continue fostering a strong research culture at Leading University.
+                                            </p>
+                                            <p className="text-gray-700 leading-relaxed font-semibold text-[var(--primary)]">
+                                                Let&apos;s carry this spirit of unity and knowledge forward in all our future endeavors!
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    {/* Distinguished Guests */}
+                                    <div className="bg-gradient-to-br from-[var(--primary)]/5 to-sky-50 rounded-2xl p-6 border border-[var(--primary)]/10">
+                                        <h5 className="font-bold text-lg text-gray-900 mb-4 flex items-center gap-2">
+                                            <Award className="w-5 h-5 text-[var(--primary)]" />
+                                            Distinguished Guests
+                                        </h5>
+                                        <ul className="space-y-2 text-gray-700">
+                                            <li className="flex items-start gap-2">
+                                                <Star className="w-4 h-4 text-[var(--primary)] mt-1 flex-shrink-0" />
+                                                <span>Dr. Safkat Kibria - Honourable Adviser</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <Star className="w-4 h-4 text-[var(--primary)] mt-1 flex-shrink-0" />
+                                                <span>MD. Jamaner Rahaman - Co-Adviser</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <Star className="w-4 h-4 text-[var(--primary)] mt-1 flex-shrink-0" />
+                                                <span>Md. Ebrahim Hussain - Special Guest</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <Star className="w-4 h-4 text-[var(--primary)] mt-1 flex-shrink-0" />
+                                                <span>Abdus Samad Sumo - Founding President</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                {/* Right: Image Placeholder */}
+                                <div className="space-y-4">
+                                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl group/image">
+                                        <Image
+                                            src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                            alt="Iftar Mahfil 2025"
+                                            fill
+                                            className="object-cover transition-transform duration-700 group-hover/image:scale-110"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                                    </div>
+
+                                    {/* Stats Cards */}
+                                    <div className="grid grid-cols-3 gap-3">
+                                        <div className="bg-gradient-to-br from-[var(--primary)]/10 to-sky-50 rounded-xl p-4 text-center hover:scale-105 transition-transform duration-300">
+                                            <Users className="w-6 h-6 text-[var(--primary)] mx-auto mb-2" />
+                                            <div className="text-2xl font-bold text-gray-900">50+</div>
+                                            <div className="text-xs text-gray-600 uppercase">Attendees</div>
+                                        </div>
+                                        <div className="bg-gradient-to-br from-sky-100 to-blue-50 rounded-xl p-4 text-center hover:scale-105 transition-transform duration-300">
+                                            <Heart className="w-6 h-6 text-sky-600 mx-auto mb-2 animate-pulse" />
+                                            <div className="text-2xl font-bold text-gray-900">Unity</div>
+                                            <div className="text-xs text-gray-600 uppercase">Spirit</div>
+                                        </div>
+                                        <div className="bg-gradient-to-br from-blue-100 to-sky-50 rounded-xl p-4 text-center hover:scale-105 transition-transform duration-300">
+                                            <Award className="w-6 h-6 text-blue-600 mx-auto mb-2" />
+                                            <div className="text-2xl font-bold text-gray-900">2025</div>
+                                            <div className="text-xs text-gray-600 uppercase">Event</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            {/* Call to Action */}
+            <section className="py-16 px-4 bg-gradient-to-r from-[var(--primary)] via-purple-600 to-pink-600 relative overflow-hidden">
+                <div className="absolute inset-0 opacity-10">
+                    <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                    <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
+                </div>
+
+                <div
+                    className="max-w-4xl mx-auto text-center text-white relative z-10"
+                    id="cta-section"
+                    data-animate
+                >
+                    <div className={`transform transition-all duration-1000 ${isVisible['cta-section'] ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-90'
+                        }`}>
+                        <div className="flex items-center justify-center gap-4 mb-6">
+                            <Heart className="w-12 h-12 animate-pulse" />
+                            <Sparkles className="w-10 h-10" />
+                            <Globe className="w-12 h-12 animate-spin-slow" />
+                        </div>
+                        <h3 className="text-4xl md:text-5xl font-bold mb-6">
+                            Join Our Cultural Journey
+                        </h3>
+                        <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+                            Be part of our vibrant community and participate in events that celebrate unity, culture, and togetherness.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <style jsx>{`
+                @keyframes gradient {
+                    0% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                    100% { background-position: 0% 50%; }
+                }
+                
+                @keyframes float {
+                    0%, 100% { transform: translateY(0px); }
+                    50% { transform: translateY(-15px); }
+                }
+                
+                @keyframes float-delayed {
+                    0%, 100% { transform: translateY(0px); }
+                    50% { transform: translateY(-12px); }
+                }
+                
+                .animate-gradient {
+                    background-size: 200% 200%;
+                    animation: gradient 8s ease infinite;
+                }
+                
+                .animate-spin-slow {
+                    animation: spin 15s linear infinite;
+                }
+                
+                .animate-float {
+                    animation: float 6s ease-in-out infinite;
+                }
+                
+                .animate-float-delayed {
+                    animation: float-delayed 6s ease-in-out infinite 2s;
+                }
+                
+                .animate-fade-in-up {
+                    animation: fadeInUp 1.2s ease-out;
+                }
+
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(30px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                
+                @keyframes spin {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+            `}</style>
+        </div>
+    );
+};
+
+export default CulturalSocialPage;
