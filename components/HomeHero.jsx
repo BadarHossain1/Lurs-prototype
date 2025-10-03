@@ -11,7 +11,7 @@ const HomeHero = () => {
                 <div className="max-w-5xl text-center mx-auto w-full">
 
 
-                    <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold mb-8 leading-[110%] drop-shadow-lg pt-15">
+                    <h1 className=" text-4xl sm:text-6xl md:text-7xl font-bold mb-8 leading-[110%] drop-shadow-lg pt-30 mt-30">
                         Leading University Research Society
                     </h1>
 

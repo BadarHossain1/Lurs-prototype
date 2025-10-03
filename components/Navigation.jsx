@@ -8,7 +8,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 const Dropdown = ({ title, items = [] }) => {
     return (
         <div className="relative group">
-            <button className="flex items-center gap-2 text-white hover:text-blue-200 transition-all duration-300 font-semibold py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-300 after:transition-all after:duration-300 hover:after:w-full">
+            <button className="flex text-sm items-center gap-2 text-white hover:text-blue-200 transition-all duration-300 font-semibold py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-300 after:transition-all after:duration-300 hover:after:w-full">
                 {title} <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
             </button>
             <div className="absolute left-0 mt-2 bg-white/95 backdrop-blur-lg text-gray-800 rounded-2xl shadow-2xl border border-gray-100 min-w-[240px] py-3 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
@@ -60,14 +60,14 @@ const Navigation = () => {
                         <Link href="/" className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
                             <Image src="/apple-touch-icon.png" alt="LURS" width={80} height={80} className="object-contain w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20" />
                             <div className="flex flex-col justify-center  text-white leading-tight">
-                                <span className="text-lg md:text-lg lg:text-xl font-bold leading-tight">Leading University</span>
-                                <span className="text-lg md:text-lg lg:text-xl font-bold leading-tight">Research Society</span>
+                                <span className="text-base md:text-lg lg:text- font-bold leading-tight">Leading University</span>
+                                <span className="text-base md:text-lg lg:text-xl font-bold leading-tight">Research Society</span>
                             </div>
                         </Link>
                     </div>
 
                     {/* Desktop menu */}
-                    <div className="hidden lg:flex items-center gap-8">
+                    <div className="hidden  lg:flex items-center gap-8">
                         {/* <Link href="/" className="text-white hover:text-blue-200 transition-all duration-300 font-semibold py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-300 after:transition-all after:duration-300 hover:after:w-full">HOME</Link> */}
 
                         <Dropdown
@@ -205,7 +205,7 @@ const Navigation = () => {
                             </details>
 
                             <details className="group">
-                                <summary className="py-3 px-4 font-semibold text-gray-800 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer list-none flex items-center justify-between">
+                                <summary className=" py-3 px-4 font-semibold text-gray-800 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer list-none flex items-center justify-between">
                                     MEMBERSHIP
                                     <ChevronDown size={18} className="text-gray-600 transition-transform duration-200 group-open:rotate-180" />
                                 </summary>
