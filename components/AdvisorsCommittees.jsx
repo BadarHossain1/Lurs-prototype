@@ -127,8 +127,8 @@ const AdvisorsCommittees = () => {
                                 <div className="backdrop-blur-lg bg-white/90 rounded-3xl shadow-2xl overflow-hidden border border-[#166a98]/20 hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-3">
                                     <div className="relative overflow-hidden">
                                         <Image
-                                            src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600"
-                                            alt="Dr. Sarah Ahmed - Advisor"
+                                            src="https://res.cloudinary.com/draevbvcu/image/upload/v1745142755/FB_IMG_1745141103346_rykcyf.jpg"
+                                            alt="Dr. Shafkat Kibria - Advisor"
                                             width={400}
                                             height={300}
                                             className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
@@ -143,24 +143,16 @@ const AdvisorsCommittees = () => {
 
                                     <div className="p-8">
                                         <div className="mb-6">
-                                            <h3 className="text-2xl font-bold text-[#166a98] mb-2">Dr. Sarah Ahmed</h3>
+                                            <h3 className="text-2xl font-bold text-[#166a98] mb-2">Dr. Shafkat Kibria</h3>
                                             <div className="space-y-2">
-                                                <p className="text-[#166a98] font-semibold text-lg">Chief Advisor, LURS</p>
-                                                <p className="text-gray-600 font-medium">Professor & Head</p>
+                                                <p className="text-[#166a98] font-semibold text-lg"> Advisor, LURS</p>
+                                                <p className="text-gray-600 font-medium">Assistant Professor</p>
                                                 <p className="text-gray-500">Department of Computer Science and Engineering</p>
                                             </div>
                                         </div>
 
-                                        <div className="space-y-4">
-                                            <div className="flex items-start space-x-3 backdrop-blur-sm bg-white/50 p-3 rounded-lg">
-                                                <div className="bg-[#166a98]/10 p-2 rounded-lg">
-                                                    <div className="w-2 h-2 bg-[#166a98] rounded-full animate-pulse"></div>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-semibold text-[#166a98]">Research Focus</h4>
-                                                    <p className="text-gray-600 text-sm">Artificial Intelligence, Machine Learning, Data Science</p>
-                                                </div>
-                                            </div>
+                                        {/* <div className="space-y-4">
+                                            
 
                                             <div className="flex items-start space-x-3 backdrop-blur-sm bg-white/50 p-3 rounded-lg">
                                                 <div className="bg-[#166a98]/10 p-2 rounded-lg">
@@ -171,7 +163,7 @@ const AdvisorsCommittees = () => {
                                                     <p className="text-gray-600 text-sm">15+ years in academia and research supervision</p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
 
 
                                     </div>
@@ -190,8 +182,8 @@ const AdvisorsCommittees = () => {
                                 <div className="backdrop-blur-lg bg-white/90 rounded-3xl shadow-2xl overflow-hidden border border-[#166a98]/20 hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-3">
                                     <div className="relative overflow-hidden">
                                         <Image
-                                            src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=600"
-                                            alt="Dr. Mohammad Rahman - Co-Advisor"
+                                            src="https://res.cloudinary.com/draevbvcu/image/upload/v1745142756/IMG-20250420-WA0016_xjdo6q.jpg"
+                                            alt="Md. Jamaner Rahaman - Co-Advisor"
                                             width={400}
                                             height={300}
                                             className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
@@ -206,15 +198,15 @@ const AdvisorsCommittees = () => {
 
                                     <div className="p-8">
                                         <div className="mb-6">
-                                            <h3 className="text-2xl font-bold text-[#166a98] mb-2">Dr. Mohammad Rahman</h3>
+                                            <h3 className="text-2xl font-bold text-[#166a98] mb-2">Md. Jamaner Rahaman</h3>
                                             <div className="space-y-2">
                                                 <p className="text-[#1a7eb0] font-semibold text-lg">Co-Advisor, LURS</p>
-                                                <p className="text-gray-600 font-medium">Associate Professor</p>
+                                                <p className="text-gray-600 font-medium">Lecturer</p>
                                                 <p className="text-gray-500">Department of Computer Science and Engineering</p>
                                             </div>
                                         </div>
 
-                                        <div className="space-y-4">
+                                        {/* <div className="space-y-4">
                                             <div className="flex items-start space-x-3 backdrop-blur-sm bg-white/50 p-3 rounded-lg">
                                                 <div className="bg-[#166a98]/10 p-2 rounded-lg">
                                                     <div className="w-2 h-2 bg-[#1a7eb0] rounded-full animate-pulse"></div>
@@ -234,7 +226,7 @@ const AdvisorsCommittees = () => {
                                                     <p className="text-gray-600 text-sm">12+ years in research and industry collaboration</p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
 
                                     </div>
                                 </div>

@@ -51,17 +51,17 @@ const Sections = () => {
     const advisors = [
         {
             id: 1,
-            name: "Dr. Sarah Mitchell",
-            qualification: "PhD in Environmental Science",
-            position: "Dean of Research Affairs",
-            image: "https://images.pexels.com/photos/3762800/pexels-photo-3762800.jpeg?auto=compress&cs=tinysrgb&w=400"
+            name: "Dr. Shafkat Kibria",
+            
+            position: "Advisor",
+            image: "https://res.cloudinary.com/draevbvcu/image/upload/v1745142755/FB_IMG_1745141103346_rykcyf.jpg"
         },
         {
             id: 2,
-            name: "Prof. Ahmed Rahman",
-            qualification: "PhD in Computer Science",
-            position: "Director of Innovation Hub",
-            image: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=400"
+            name: "Md. Jamaner Rahaman",
+            
+            position: "Co-advisor",
+            image: "https://res.cloudinary.com/draevbvcu/image/upload/v1745142756/IMG-20250420-WA0016_xjdo6q.jpg"
         }
     ];
 
@@ -183,7 +183,7 @@ const Sections = () => {
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#176b98]/0 to-[#176b98]/0 group-hover:from-[#176b98]/5 group-hover:to-[#176b98]/10 transition-all duration-500 rounded-3xl"></div>
 
                                     <div className="text-center relative z-10">
-                                        <div className="text-6xl mb-4 animate-float group-hover:scale-110 transition-all duration-300 inline-block">
+                                        <div className="text-6xl mb-4 group-hover:scale-110 transition-all duration-300 inline-block">
                                             {objective.icon}
                                         </div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#176b98] transition-colors duration-300">
@@ -251,9 +251,7 @@ const Sections = () => {
                                         <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#176b98] transition-colors duration-300">
                                             {advisor.name}
                                         </h3>
-                                        <p className="text-[#176b98] font-semibold mb-2 text-sm">
-                                            {advisor.qualification}
-                                        </p>
+                                        
                                         <p className="text-gray-600 font-medium">
                                             {advisor.position}
                                         </p>
