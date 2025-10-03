@@ -162,13 +162,13 @@ const InternationalRepresentation = () => {
                                     </div>
 
                                     {/* Representatives removed by request - reserved for future reuse */}
-                                    <div className="mb-12">
+                                    {/* <div className="mb-12">
                                         <h5 className="text-2xl font-bold text-[var(--primary)] mb-4">Representatives</h5>
                                         <p className="text-sky-700 leading-relaxed text-lg">
                                             The list of representatives has been intentionally removed from this page for a cleaner presentation.
                                             If you want to display representatives in future events, the page supports adding a responsive representatives grid.
                                         </p>
-                                    </div>
+                                    </div> */}
 
                                     {/* Achievements */}
                                     <div className="mb-12">

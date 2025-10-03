@@ -204,13 +204,13 @@ const WebinarsSeminars = () => {
                                                 <p className="text-xl text-blue-200">{event.speakerTitle}</p>
                                             </div>
                                         </div>
-                                        <div className="bg-white/20 backdrop-blur-sm rounded-3xl p-6">
+                                        {/* <div className="bg-white/20 backdrop-blur-sm rounded-3xl p-6">
                                             {event.type === 'seminar' ? (
                                                 <Mic className="w-16 h-16 text-white animate-pulse" />
                                             ) : (
                                                 <Play className="w-16 h-16 text-white" />
                                             )}
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
 
@@ -291,9 +291,12 @@ const WebinarsSeminars = () => {
                             Be part of a vibrant community that celebrates knowledge sharing and continuous learning.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-                            <div className="bg-white/20 backdrop-blur-sm rounded-full px-8 py-4 hover:bg-white/30 transition-all duration-300 hover:scale-105">
-                                <span className="font-bold text-xl">Join Now</span>
-                            </div>
+                            <a
+                                href="/membership/join-now"
+                                className="inline-flex items-center justify-center bg-white text-[#166a98] px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                            >
+                                Get Involved
+                            </a>
 
                         </div>
                     </div>

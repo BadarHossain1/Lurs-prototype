@@ -59,16 +59,16 @@ const Navigation = () => {
                         {/* Main logo with text */}
                         <Link href="/" className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
                             <Image src="/apple-touch-icon.png" alt="LURS" width={80} height={80} className="object-contain w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20" />
-                            <div className="flex flex-col justify-center text-white leading-tight">
-                                <span className="text-base md:text-lg lg:text-xl font-bold leading-tight">Leading University</span>
-                                <span className="text-base md:text-lg lg:text-xl font-bold leading-tight">Research Society</span>
+                            <div className="flex flex-col justify-center  text-white leading-tight">
+                                <span className="text-lg md:text-lg lg:text-xl font-bold leading-tight">Leading University</span>
+                                <span className="text-lg md:text-lg lg:text-xl font-bold leading-tight">Research Society</span>
                             </div>
                         </Link>
                     </div>
 
                     {/* Desktop menu */}
                     <div className="hidden lg:flex items-center gap-8">
-                        <Link href="/" className="text-white hover:text-blue-200 transition-all duration-300 font-semibold py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-300 after:transition-all after:duration-300 hover:after:w-full">HOME</Link>
+                        {/* <Link href="/" className="text-white hover:text-blue-200 transition-all duration-300 font-semibold py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-300 after:transition-all after:duration-300 hover:after:w-full">HOME</Link> */}
 
                         <Dropdown
                             title="WHAT WE DO"

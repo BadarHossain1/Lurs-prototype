@@ -50,7 +50,7 @@ const Footer = () => {
                         }}
                     >
                         <div className="mb-6 group-hover:scale-105 transition-transform duration-300">
-                            <div className="relative w-32 h-32 bg-white/10 backdrop-blur-md rounded-2xl p-4 hover:bg-white/20 transition-all duration-300 border border-white/20">
+                            <div className="relative w-32 h-32">
                                 <Image
                                     src="/apple-touch-icon.png"
                                     alt="LURS Logo"
@@ -88,7 +88,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Column 2 - Quick Links */}
+                    {/* Column 2 - Navigation Menus */}
                     <div
                         style={{
                             opacity: isVisible ? 1 : 0,
@@ -96,51 +96,30 @@ const Footer = () => {
                             transition: 'all 0.6s ease 0.1s'
                         }}
                     >
-                        <h3 className="text-xl font-bold mb-6 text-[#176b98] flex items-center">
-                            <span className="mr-2 text-2xl animate-pulse">⚡</span>
-                            Quick Links
-                        </h3>
+                        <h3 className="text-xl font-bold mb-6 text-[#176b98]">WHAT WE DO</h3>
                         <ul className="space-y-3">
                             <li>
-                                <Link
-                                    href="/about"
-                                    className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group hover:translate-x-2"
-                                >
-                                    <span className="mr-2 text-[#176b98] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                                <Link href="/about" className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group">
+                                    <span className="mr-2 text-[#176b98]">→</span>
                                     About Us
                                 </Link>
                             </li>
                             <li>
-                                <Link
-                                    href="/founding-committee"
-                                    className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group hover:translate-x-2"
-                                >
-                                    <span className="mr-2 text-[#176b98] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                                <Link href="/founding-committee" className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group">
+                                    <span className="mr-2 text-[#176b98]">→</span>
                                     Founding Committee
                                 </Link>
                             </li>
                             <li>
-                                <Link
-                                    href="/conferences/1st-student-research-conference"
-                                    className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group hover:translate-x-2"
-                                >
-                                    <span className="mr-2 text-[#176b98] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                                    Conferences
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/events/webinars-seminars"
-                                    className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group hover:translate-x-2"
-                                >
-                                    <span className="mr-2 text-[#176b98] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                                    Events
+                                <Link href="/advisors-committees" className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group">
+                                    <span className="mr-2 text-[#176b98]">→</span>
+                                    Advisors & Committees
                                 </Link>
                             </li>
                         </ul>
                     </div>
 
-                    {/* Column 3 - Research */}
+                    {/* Column 3 - More Navigation Menus */}
                     <div
                         style={{
                             opacity: isVisible ? 1 : 0,
@@ -148,45 +127,26 @@ const Footer = () => {
                             transition: 'all 0.6s ease 0.2s'
                         }}
                     >
-                        <h3 className="text-xl font-bold mb-6 text-[#176b98] flex items-center">
-                            <span className="mr-2 text-2xl animate-pulse">🔬</span>
-                            Research
-                        </h3>
+                    
+
+                        <h3 className="text-xl font-bold mb-6  text-[#176b98]">MEMBERSHIP</h3>
                         <ul className="space-y-3">
                             <li>
-                                <Link
-                                    href="/lurssc"
-                                    className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group hover:translate-x-2"
-                                >
-                                    <span className="mr-2 text-[#176b98] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                                    Current Projects
+                                <Link href="/membership/join-now" className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group">
+                                    <span className="mr-2 text-[#176b98]">→</span>
+                                    Join Now
                                 </Link>
                             </li>
                             <li>
-                                <Link
-                                    href="/news/newsletters"
-                                    className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group hover:translate-x-2"
-                                >
-                                    <span className="mr-2 text-[#176b98] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                                    Publications
+                                <Link href="/membership/benefits" className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group">
+                                    <span className="mr-2 text-[#176b98]">→</span>
+                                    Membership Benefits
                                 </Link>
                             </li>
                             <li>
-                                <Link
-                                    href="/advisors-committees"
-                                    className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group hover:translate-x-2"
-                                >
-                                    <span className="mr-2 text-[#176b98] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                                    Collaboration
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/news/donations"
-                                    className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group hover:translate-x-2"
-                                >
-                                    <span className="mr-2 text-[#176b98] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                                    Community Impact
+                                <Link href="/membership/contact" className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group">
+                                    <span className="mr-2 text-[#176b98]">→</span>
+                                    Contact
                                 </Link>
                             </li>
                         </ul>
@@ -235,12 +195,6 @@ const Footer = () => {
                             © 2025 Leading University Research Society. All rights reserved.
                         </p>
                         <div className="flex space-x-6 text-sm">
-                            <Link href="/privacy" className="text-gray-400 hover:text-[#176b98] transition-colors duration-300">
-                                Privacy Policy
-                            </Link>
-                            <Link href="/terms" className="text-gray-400 hover:text-[#176b98] transition-colors duration-300">
-                                Terms of Service
-                            </Link>
                             <Link href="/sitemap" className="text-gray-400 hover:text-[#176b98] transition-colors duration-300">
                                 Sitemap
                             </Link>

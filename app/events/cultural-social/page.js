@@ -350,7 +350,7 @@ const CulturalSocialPage = () => {
             </section>
 
             {/* Call to Action */}
-            <section className="py-16 px-4 bg-gradient-to-r from-[var(--primary)] via-purple-600 to-pink-600 relative overflow-hidden">
+            <section className="py-16 px-4 bg-gradient-to-r from-[var(--primary)] via-blue-600 to-blue-400 relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
                     <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
@@ -374,6 +374,12 @@ const CulturalSocialPage = () => {
                         <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
                             Be part of our vibrant community and participate in events that celebrate unity, culture, and togetherness.
                         </p>
+                        <a
+                            href="/membership/join-now"
+                            className="inline-flex items-center justify-center bg-white text-[#166a98] px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                        >
+                            Get Involved
+                        </a>
                     </div>
                 </div>
             </section>

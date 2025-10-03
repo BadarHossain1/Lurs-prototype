@@ -373,12 +373,7 @@ const AdvisorsCommittees = () => {
                                     >
                                         Apply for Membership
                                     </a>
-                                    <a
-                                        href="/conferences/2nd-student-research-conference"
-                                        className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#166a98] transform hover:scale-105 transition-all duration-300"
-                                    >
-                                        Research Opportunities
-                                    </a>
+                                    
                                 </div>
                             </div>
                         </div>
