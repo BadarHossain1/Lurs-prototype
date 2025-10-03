@@ -54,53 +54,47 @@ const InternationalRepresentation = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-            {/* Hero Section */}
-            <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+            {/* Hero Section with Floating Elements */}
+            <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-[var(--primary)] via-indigo-600 to-[var(--primary)]">
                 {/* Animated Background Elements */}
                 <div className="absolute inset-0">
-                    <div className="absolute top-20 left-10 w-32 h-32 bg-[var(--primary)]/15 rounded-full animate-pulse"></div>
-                    <div className="absolute top-40 right-20 w-24 h-24 bg-sky-200/30 rounded-full animate-bounce"></div>
-                    <div className="absolute bottom-32 left-32 w-20 h-20 bg-blue-100/30 rounded-full animate-pulse delay-1000"></div>
-                    <div className="absolute bottom-20 right-10 w-28 h-28 bg-indigo-200/20 rounded-full animate-bounce delay-500"></div>
+                    <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute top-40 right-20 w-40 h-40 bg-blue-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
+                    <div className="absolute bottom-20 left-1/4 w-36 h-36 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }}></div>
+                    <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-blue-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }}></div>
                 </div>
 
-                {/* Hero Content */}
-                <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
-                    <div className="animate-fade-in-up">
-                        <div className="flex items-center justify-center gap-3 mb-6">
-                            <Globe className="w-12 h-12 text-[var(--primary)] animate-spin-slow" />
-                            <div className="h-12 w-0.5 bg-gradient-to-b from-[var(--primary)] to-transparent"></div>
-                            <Award className="w-10 h-10 text-indigo-600 animate-pulse" />
-                        </div>
+                {/* Floating Icons */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    <Globe className="absolute top-32 left-1/4 w-16 h-16 text-white/20 animate-float" />
+                    <Users className="absolute top-48 right-1/4 w-12 h-12 text-white/20 animate-float" style={{ animationDelay: "0.5s" }} />
+                    <Award className="absolute bottom-40 left-1/3 w-14 h-14 text-white/20 animate-float" style={{ animationDelay: "1s" }} />
+                    <MapPin className="absolute bottom-32 right-1/3 w-10 h-10 text-white/20 animate-float" style={{ animationDelay: "1.5s" }} />
+                </div>
 
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[var(--primary)] via-indigo-600 to-purple-600 bg-clip-text text-transparent animate-gradient">
-                            International
+                <div className="container max-w-7xl mx-auto px-4 relative z-10">
+                    <div className="text-center">
+                        <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-gradient bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent bg-[length:200%_auto]">
+                            International Representation
                         </h1>
-                        <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-purple-600 via-pink-600 to-[var(--primary)] bg-clip-text text-transparent animate-gradient">
-                            Representation
-                        </h2>
-
-                        <p className="text-xl md:text-2xl text-sky-800 mb-12 max-w-4xl mx-auto leading-relaxed">
+                        <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed backdrop-blur-sm bg-white/10 px-8 py-4 rounded-2xl border border-white/20">
                             Showcasing our global research impact and fostering international academic collaborations
                         </p>
 
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                            <div className="flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-                                <MapPin className="w-5 h-5 text-[var(--primary)]" />
-                                <span className="font-semibold text-sky-800">Global Presence</span>
+                        {/* Stats Cards with Glass Morphism */}
+                        <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-3xl mx-auto">
+                            <div className="backdrop-blur-lg bg-white/10 rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                                <MapPin className="w-8 h-8 text-white mx-auto mb-2" />
+                                <div className="text-white/80">Global Presence</div>
                             </div>
-                            <div className="flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-                                <Users className="w-5 h-5 text-sky-600" />
-                                <span className="font-semibold text-sky-800">Research Excellence</span>
+                            <div className="backdrop-blur-lg bg-white/10 rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                                <Users className="w-8 h-8 text-white mx-auto mb-2" />
+                                <div className="text-white/80">Research Excellence</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Scroll Indicator */}
-                <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-                    <ChevronRight className="w-8 h-8 text-[var(--primary)] rotate-90" />
-                </div>
             </section>
 
             {/* International Events Section */}

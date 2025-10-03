@@ -3,11 +3,11 @@ import Slider from "./slider";
 
 const HomeHero = () => {
     return (
-        <div className="hero-bg h-screen overflow-hidden relative">
+        <div className="hero-bg h-screen overflow-hidden relative z-0">
             <Slider />
             {/* Full hero bluish overlay over images (increased concentration) */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[rgba(23,107,152,0.78)] via-[rgba(23,107,152,0.62)] to-[rgba(0,0,0,0.82)] z-20"></div>
-            <div className="container max-w-7xl mx-auto px-4 py-2 flex justify-center items-center w-full h-full text-white z-30 absolute top-0 left-1/2 -translate-x-1/2 pt-32 max-sm:pt-40">
+            <div className="absolute inset-0 bg-gradient-to-br from-[rgba(23,107,152,0.78)] via-[rgba(23,107,152,0.62)] to-[rgba(0,0,0,0.82)] z-10"></div>
+            <div className="container max-w-7xl mx-auto px-4 py-2 flex justify-center items-center w-full h-full text-white z-20 absolute top-0 left-1/2 -translate-x-1/2 pt-32 max-sm:pt-40">
                 <div className="max-w-5xl text-center mx-auto w-full">
 
 

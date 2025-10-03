@@ -146,66 +146,49 @@ const NationalDaysPage = () => {
                 }
             `}</style>
 
-            {/* Hero Section */}
-            <section className="relative pt-32 pb-20 min-h-[85vh] flex items-center justify-center overflow-hidden">
+            {/* Hero Section with Floating Elements */}
+            <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-[var(--primary)] via-sky-600 to-[var(--primary)]">
                 {/* Animated Background Elements */}
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-20 left-10 w-32 h-32 bg-[var(--primary)]/10 rounded-full animate-pulse"></div>
-                    <div className="absolute top-40 right-20 w-24 h-24 bg-sky-200/20 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
-                    <div className="absolute bottom-32 left-1/4 w-20 h-20 bg-blue-200/25 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-                    <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-sky-300/15 rounded-full animate-bounce" style={{ animationDelay: '0.3s' }}></div>
+                <div className="absolute inset-0">
+                    <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute top-40 right-20 w-40 h-40 bg-blue-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
+                    <div className="absolute bottom-20 left-1/4 w-36 h-36 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }}></div>
+                    <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-blue-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }}></div>
                 </div>
 
                 {/* Floating Icons */}
-                <div className="absolute inset-0 pointer-events-none">
-                    <Flag className="absolute top-1/4 left-1/5 w-10 h-10 text-[var(--primary)]/30 animate-float" />
-                    <Heart className="absolute top-1/3 right-1/4 w-8 h-8 text-sky-500/40 animate-float-delayed" />
-                    <Sparkles className="absolute bottom-1/3 left-1/3 w-7 h-7 text-blue-500/35 animate-pulse" />
-                    <Star className="absolute bottom-1/4 right-1/5 w-9 h-9 text-sky-500/30 animate-float" />
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    <Flag className="absolute top-32 left-1/4 w-16 h-16 text-white/20 animate-float" />
+                    <Heart className="absolute top-48 right-1/4 w-12 h-12 text-white/20 animate-float" style={{ animationDelay: "0.5s" }} />
+                    <Sparkles className="absolute bottom-40 left-1/3 w-14 h-14 text-white/20 animate-float" style={{ animationDelay: "1s" }} />
+                    <Star className="absolute bottom-32 right-1/3 w-10 h-10 text-white/20 animate-float" style={{ animationDelay: "1.5s" }} />
                 </div>
 
-                {/* Hero Content */}
-                <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
-                    <div className="animate-fade-in-up">
-                        {/* Rotating Flag Icons */}
-                        <div className="flex items-center justify-center gap-6 mb-8">
-                            <Flag className="w-14 h-14 text-[var(--primary)] animate-spin-slow" />
-                            <div className="h-14 w-1 bg-gradient-to-b from-[var(--primary)] via-sky-400 to-transparent rounded-full"></div>
-                            <Heart className="w-12 h-12 text-sky-500 animate-pulse" />
-                            <div className="h-12 w-0.5 bg-gradient-to-b from-sky-400 to-transparent rounded-full"></div>
-                            <Sparkles className="w-10 h-10 text-blue-600" />
-                        </div>
-
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-[var(--primary)] via-sky-500 to-blue-500 bg-clip-text text-transparent animate-gradient">
-                            National Days
+                <div className="container max-w-7xl mx-auto px-4 relative z-10">
+                    <div className="text-center">
+                        <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-gradient bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent bg-[length:200%_auto]">
+                            National Days & Tributes
                         </h1>
-                        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-sky-500 via-blue-500 to-[var(--primary)] bg-clip-text text-transparent animate-gradient">
-                            & Tributes
-                        </h2>
-
-                        <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed">
+                        <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed backdrop-blur-sm bg-white/10 px-8 py-4 rounded-2xl border border-white/20">
                             Honoring our heroes, celebrating our heritage, and remembering those who gave everything for our freedom
                         </p>
 
-                        {/* Feature Badges */}
-                        <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-                            <div className="group bg-white/80 backdrop-blur-lg rounded-full px-6 py-3 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border border-white/50">
-                                <div className="flex items-center gap-2">
-                                    <Flag className="w-5 h-5 text-[var(--primary)] animate-pulse-glow" />
-                                    <span className="text-sm font-bold text-[var(--primary)]">Independence Day</span>
-                                </div>
+                        {/* Stats Cards with Glass Morphism */}
+                        <div className="grid md:grid-cols-3 gap-6 mt-12 max-w-4xl mx-auto">
+                            <div className="backdrop-blur-lg bg-white/10 rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                                <Flag className="w-8 h-8 text-white mx-auto mb-2" />
+                                <div className="text-white font-semibold mb-1">Independence Day</div>
+                                <div className="text-white/80 text-sm">Celebrating freedom</div>
                             </div>
-                            <div className="group bg-white/80 backdrop-blur-lg rounded-full px-6 py-3 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border border-white/50">
-                                <div className="flex items-center gap-2">
-                                    <Heart className="w-5 h-5 text-sky-600" />
-                                    <span className="text-sm font-bold text-sky-600">Victory Day</span>
-                                </div>
+                            <div className="backdrop-blur-lg bg-white/10 rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                                <Heart className="w-8 h-8 text-white mx-auto mb-2" />
+                                <div className="text-white font-semibold mb-1">Victory Day</div>
+                                <div className="text-white/80 text-sm">Honoring heroes</div>
                             </div>
-                            <div className="group bg-white/80 backdrop-blur-lg rounded-full px-6 py-3 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border border-white/50">
-                                <div className="flex items-center gap-2">
-                                    <Sparkles className="w-5 h-5 text-blue-600" />
-                                    <span className="text-sm font-bold text-blue-600">Mother Language Day</span>
-                                </div>
+                            <div className="backdrop-blur-lg bg-white/10 rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                                <Sparkles className="w-8 h-8 text-white mx-auto mb-2" />
+                                <div className="text-white font-semibold mb-1">Mother Language Day</div>
+                                <div className="text-white/80 text-sm">Remembering martyrs</div>
                             </div>
                         </div>
                     </div>
