@@ -212,8 +212,8 @@ const ContactUs = () => {
                                     type="submit"
                                     disabled={isSubmitting}
                                     className={`w-full py-4 px-8 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 focus:scale-105 ${isSubmitting
-                                            ? 'bg-gray-400 cursor-not-allowed'
-                                            : 'bg-[var(--primary)] hover:bg-blue-700 focus:bg-blue-700 shadow-lg hover:shadow-2xl'
+                                        ? 'bg-gray-400 cursor-not-allowed'
+                                        : 'bg-[var(--primary)] hover:bg-blue-700 focus:bg-blue-700 shadow-lg hover:shadow-2xl'
                                         } text-white flex items-center justify-center space-x-2`}
                                 >
                                     {isSubmitting ? (
@@ -233,11 +233,73 @@ const ContactUs = () => {
                     </div>
                 </div>
 
-                {/* Campus Images Section */}
+                {/* Map Section */}
                 <div className="mt-20 animate-fade-up" style={{ animationDelay: '1.2s' }}>
+                    <h3 className="text-3xl font-bold text-center text-gray-800 mb-12">Find Us on the Map</h3>
+                    <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
+                        <div className="p-6 bg-gradient-to-r from-[var(--primary)] to-blue-600 text-white">
+                            <div className="flex items-center justify-center space-x-3">
+                                <MapPin className="w-6 h-6" />
+                                <div className="text-center">
+                                    <h4 className="text-xl font-bold">Leading University</h4>
+                                    <p className="text-blue-100">Ragibnagar, South Surma, Sylhet, Bangladesh</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="relative h-96 md:h-[500px]">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.7234567890123!2d91.8697!3d24.8949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375054d3d270329f%3A0x2c5c5c5c5c5c5c5c!2sLeading%20University!5e0!3m2!1sen!2sbd!4v1234567890123!5m2!1sen!2sbd"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen=""
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                title="Leading University Location"
+                                className="w-full h-full"
+                            ></iframe>
+                        </div>
+                        <div className="p-6 bg-gray-50">
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="flex items-start space-x-3">
+                                    <div className="bg-[var(--primary)] p-2 rounded-lg">
+                                        <MapPin className="w-5 h-5 text-white" />
+                                    </div>
+                                    <div>
+                                        <h5 className="font-semibold text-gray-800 mb-1">Address</h5>
+                                        <p className="text-gray-600 text-sm">
+                                            Leading University<br />
+                                            Ragibnagar, South Surma<br />
+                                            Sylhet, Bangladesh
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start space-x-3">
+                                    <div className="bg-[var(--primary)] p-2 rounded-lg">
+                                        <Phone className="w-5 h-5 text-white" />
+                                    </div>
+                                    <div>
+                                        <h5 className="font-semibold text-gray-800 mb-1">Contact</h5>
+                                        <p className="text-gray-600 text-sm">
+                                            Phone: +880 821 710274<br />
+                                            Email: info@lus.ac.bd
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Campus Images Section */}
+                <div className="mt-20 animate-fade-up" style={{ animationDelay: '1.4s' }}>
                     <h3 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Beautiful Campus</h3>
                     <div className="grid md:grid-cols-3 gap-8">
-                        {['/campus-1.jpg', '/campus-2.jpg', '/campus-3.jpg'].map((img, idx) => (
+                        {[
+                            'https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg',
+                            'https://images.pexels.com/photos/159490/yale-university-landscape-universities-schools-159490.jpeg',
+                            'https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg'
+                        ].map((img, idx) => (
                             <div key={idx} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                                 <Image
                                     src={img}
@@ -247,6 +309,10 @@ const ContactUs = () => {
                                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <h4 className="font-semibold">Campus View {idx + 1}</h4>
+                                    <p className="text-sm text-gray-200">Leading University</p>
+                                </div>
                             </div>
                         ))}
                     </div>

@@ -60,8 +60,9 @@ const Navigation = () => {
                         <Link href="/" className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
                             <Image src="/apple-touch-icon.png" alt="LURS" width={80} height={80} className="object-contain w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20" />
                             <div className="flex flex-col justify-center  text-white leading-tight">
-                                <span className="text-base md:text-lg lg:text- font-bold leading-tight">Leading University</span>
-                                <span className="text-base md:text-lg lg:text-xl font-bold leading-tight">Research Society</span>
+                                <span className="text-base md:text-lg  font-bold leading-tight">Leading University</span>
+                                <span className="text-base md:text-lg 
+                                font-bold leading-tight">Research Society</span>
                             </div>
                         </Link>
                     </div>

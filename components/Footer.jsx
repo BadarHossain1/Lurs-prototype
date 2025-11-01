@@ -61,7 +61,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <p className="text-gray-300 leading-relaxed mb-6 text-sm">
-                            Leading University Research Society - Advancing research excellence and fostering innovation for a better tomorrow.
+                            Leading University Research Society - Empowering knowledge Through research
                         </p>
                         <div className="flex space-x-3">
                             <Link
@@ -169,13 +169,11 @@ const Footer = () => {
                                 <span className="mr-3 text-lg">📍</span>
                                 <p>Leading University<br />Ragibnagar, South Surma<br />Sylhet, Bangladesh</p>
                             </div>
-                            <div className="flex items-center p-3 bg-white/5 backdrop-blur-sm rounded-lg hover:bg-white/10 transition-all duration-300 border border-white/10">
-                                <span className="mr-3 text-lg">📱</span>
-                                <p>+880-821-123456</p>
-                            </div>
+                            
                             <div className="flex items-center p-3 bg-white/5 backdrop-blur-sm rounded-lg hover:bg-white/10 transition-all duration-300 border border-white/10">
                                 <span className="mr-3 text-lg">✉️</span>
-                                <p>info@lurs.edu.bd</p>
+                                <p>
+lurs@lus.ac.bd</p>
                             </div>
                         </div>
                     </div>
@@ -194,11 +192,7 @@ const Footer = () => {
                         <p className="text-gray-400 text-sm mb-4 md:mb-0">
                             © 2025 Leading University Research Society. All rights reserved.
                         </p>
-                        <div className="flex space-x-6 text-sm">
-                            <Link href="/sitemap" className="text-gray-400 hover:text-[#176b98] transition-colors duration-300">
-                                Sitemap
-                            </Link>
-                        </div>
+                        
                     </div>
 
                     {/* Decorative "Back to top" button */}

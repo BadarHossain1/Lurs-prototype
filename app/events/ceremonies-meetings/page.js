@@ -60,10 +60,10 @@ A key part of our event was our founding executive committee announcement done b
                 "https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg?auto=compress&cs=tinysrgb&w=800",
                 "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800"
             ],
-            stats: [
-                { label: "Attendees", value: "100+", icon: Users },
-                { label: "Speakers", value: "5", icon: Award },
-                { label: "Duration", value: "3 Hours", icon: Trophy }
+            highlights: [
+                { label: "Leadership", value: "Committee Formation", icon: Users },
+                { label: "Focus", value: "Research Culture", icon: Award },
+                { label: "Impact", value: "Foundation Building", icon: Trophy }
             ]
         },
         {
@@ -82,10 +82,10 @@ With his wonderful guidance and advice, we had a fruitful meeting, where we disc
                 "https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=800",
                 "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=800"
             ],
-            stats: [
-                { label: "Members", value: "25+", icon: Users },
-                { label: "Topics Discussed", value: "8", icon: Award },
-                { label: "Duration", value: "2 Hours", icon: Trophy }
+            highlights: [
+                { label: "Leadership", value: "Strategic Planning", icon: Users },
+                { label: "Focus", value: "Future Vision", icon: Award },
+                { label: "Impact", value: "Team Unity", icon: Trophy }
             ]
         },
         {
@@ -104,10 +104,10 @@ A huge congratulations to the winners of our thrilling Quiz Game: 1st: Sunak Dho
                 "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=800",
                 "https://images.pexels.com/photos/1260309/pexels-photo-1260309.jpeg?auto=compress&cs=tinysrgb&w=800"
             ],
-            stats: [
-                { label: "New Members", value: "40+", icon: Users },
-                { label: "Quiz Winners", value: "6", icon: Trophy },
-                { label: "Duration", value: "4 Hours", icon: Award }
+            highlights: [
+                { label: "Leadership", value: "Member Engagement", icon: Users },
+                { label: "Focus", value: "Community Growth", icon: Award },
+                { label: "Impact", value: "Newsletter Launch", icon: Trophy }
             ]
         },
         {
@@ -126,10 +126,10 @@ We extend our heartfelt appreciation to all the outgoing members for their dedic
                 "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
                 "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=800"
             ],
-            stats: [
-                { label: "Committee Members", value: "30+", icon: Users },
-                { label: "Positions", value: "15", icon: Award },
-                { label: "Duration", value: "3 Hours", icon: Trophy }
+            highlights: [
+                { label: "Leadership", value: "Transition Ceremony", icon: Users },
+                { label: "Focus", value: "Legacy Building", icon: Award },
+                { label: "Impact", value: "New Beginnings", icon: Trophy }
             ]
         },
         {
@@ -148,10 +148,10 @@ Congratulations and best wishes from the entire Leading University Research Soci
                 "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800",
                 "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=800"
             ],
-            stats: [
-                { label: "Years Served", value: "2", icon: Trophy },
-                { label: "Impact", value: "High", icon: Award },
-                { label: "Members", value: "50+", icon: Users }
+            highlights: [
+                { label: "Leadership", value: "Mentorship", icon: Users },
+                { label: "Focus", value: "Guidance & Support", icon: Award },
+                { label: "Impact", value: "Lasting Legacy", icon: Trophy }
             ]
         },
         {
@@ -168,10 +168,32 @@ His Vision and leadership will be inspiring and we're excited for the future ahe
                 "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
                 "https://images.pexels.com/photos/1260309/pexels-photo-1260309.jpeg?auto=compress&cs=tinysrgb&w=800"
             ],
-            stats: [
-                { label: "New Leadership", value: "1", icon: Users },
-                { label: "Experience", value: "20+ Yrs", icon: Trophy },
-                { label: "Vision", value: "Bright", icon: Award }
+            highlights: [
+                { label: "Leadership", value: "New Vision", icon: Users },
+                { label: "Focus", value: "Student Success", icon: Award },
+                { label: "Impact", value: "Future Growth", icon: Trophy }
+            ]
+        },
+        {
+            id: "legacy-genesis-2",
+            title: "Legacy and Genesis 2.0",
+            date: "2025 Transition",
+            icon: Trophy,
+            content: `The Leading University Research Society (LURS) proudly hosted "Legacy and Genesis 2.0" the Farewell Ceremony of the Executive Committee (2024–2025) today, marking the conclusion of a dedicated and inspiring tenure. The event was filled with gratitude, reflection, and appreciation for a team that has led with integrity, passion, and commitment to advancing the research culture at Leading University.
+
+The ceremony was honored by the presence of our respected Advisor – Dr. Shafkat Kibria, along with the outgoing President – Dipongkar Deb, Vice Presidents – Faiza and Refah Taspia Chowdhury, General Secretary – Rayhan Ahmed, Treasurer – Rahat Islam, and Senior Executives – Muhymeen Mousuf and Mahdia Akhter Chowdhury Nipa of the 2024-2025 Executive Committee. Under their leadership, LURS has continued to uphold its vision of fostering academic excellence, promoting systematic research practices, and building a community of young researchers eager to contribute to knowledge and innovation. Their initiatives, dedication, and teamwork have left a lasting mark on the society's journey.
+
+As we bid farewell to the Executive Committee (2024–2025), we extend our sincere appreciation for their remarkable service and wish them continued success in their academic and professional pursuits. Their legacy will undoubtedly guide and inspire the next generation of research leaders at LURS.`,
+            images: [
+                "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=800"
+            ],
+            highlights: [
+                { label: "Leadership", value: "Committee Farewell", icon: Users },
+                { label: "Focus", value: "Academic Excellence", icon: Award },
+                { label: "Impact", value: "Inspiring Legacy", icon: Trophy }
             ]
         }
     ];
@@ -279,18 +301,18 @@ His Vision and leadership will be inspiring and we're excited for the future ahe
                         {/* Content Section - Right Side */}
                         <div className="lg:col-span-3 p-8">
 
-                            {/* Statistics Cards */}
+                            {/* Highlights Cards */}
                             <div className="grid grid-cols-3 gap-4 mb-8">
-                                {event.stats.map((stat, statIndex) => (
+                                {event.highlights.map((highlight, highlightIndex) => (
                                     <div
-                                        key={statIndex}
+                                        key={highlightIndex}
                                         className="text-center p-4 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-100 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
                                     >
                                         <div className="w-10 h-10 bg-[var(--primary)]/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                                            <stat.icon className="w-5 h-5 text-[var(--primary)]" />
+                                            <highlight.icon className="w-5 h-5 text-[var(--primary)]" />
                                         </div>
-                                        <div className="text-2xl font-bold text-gray-900 mb-1">{stat.value}</div>
-                                        <div className="text-xs text-gray-600 font-medium uppercase tracking-wide">{stat.label}</div>
+                                        <div className="text-sm font-bold text-gray-900 mb-1">{highlight.value}</div>
+                                        <div className="text-xs text-gray-600 font-medium uppercase tracking-wide">{highlight.label}</div>
                                     </div>
                                 ))}
                             </div>

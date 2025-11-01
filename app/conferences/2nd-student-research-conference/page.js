@@ -7,21 +7,27 @@ import {
     Users,
     Award,
     FileText,
-    Clock,
     ChevronLeft,
     ChevronRight,
     X,
-    DollarSign,
     Mail,
     Phone,
     Facebook,
     Instagram,
     Linkedin,
+    ArrowRight,
+    CheckCircle,
+    Star,
+    Globe,
+    BookOpen,
+    Target,
+    Zap,
+    TrendingUp,
 } from "lucide-react";
 import Image from "next/image";
 
 export default function SecondConferencePage() {
-    const [isVisible, setIsVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState({});
     const [currentSlide, setCurrentSlide] = useState(0);
     const [lightboxImage, setLightboxImage] = useState(null);
 
@@ -48,75 +54,83 @@ export default function SecondConferencePage() {
             id: 1,
             name: "Professor Dr. Mohammed Taj Uddin",
             designation: "Chief Patron",
-            image:
-                "https://res.cloudinary.com/ddzsqf33b/image/upload/v1748375035/lurs/ju8sja0pcprpruxojeal.jpg",
+            image: "https://res.cloudinary.com/ddzsqf33b/image/upload/v1748375035/lurs/ju8sja0pcprpruxojeal.jpg",
         },
         {
             id: 2,
             name: "Dr. Mohammod Kamruj Jaman Bhuiyan",
             designation: "Chief Editor",
-            image:
-                "https://res.cloudinary.com/ddzsqf33b/image/upload/v1748375778/lurs/cqclwzjuupycwgfol5xg.webp",
+            image: "https://res.cloudinary.com/ddzsqf33b/image/upload/v1748375778/lurs/cqclwzjuupycwgfol5xg.webp",
         },
         {
             id: 3,
             name: "Professor Dr. Bashir Ahmed Bhuiyan",
             designation: "Chief Editor",
-            image:
-                "https://res.cloudinary.com/ddzsqf33b/image/upload/v1748375038/lurs/gfpzdubjrhsyaeys7yse.jpg",
+            image: "https://res.cloudinary.com/ddzsqf33b/image/upload/v1748375038/lurs/gfpzdubjrhsyaeys7yse.jpg",
         },
         {
             id: 4,
             name: "Dr. Md. Rezaul Karim",
             designation: "Chief Editor",
-            image:
-                "https://res.cloudinary.com/ddzsqf33b/image/upload/v1748375035/lurs/kje9o2shn1pcz1l1zhfm.jpg",
+            image: "https://res.cloudinary.com/ddzsqf33b/image/upload/v1748375035/lurs/kje9o2shn1pcz1l1zhfm.jpg",
         },
         {
             id: 5,
             name: "Dr. Shafkat Kibria",
             designation: "Advisor",
-            image:
-                "https://res.cloudinary.com/draevbvcu/image/upload/v1745142755/FB_IMG_1745141103346_rykcyf.jpg",
+            image: "https://res.cloudinary.com/draevbvcu/image/upload/v1745142755/FB_IMG_1745141103346_rykcyf.jpg",
         },
         {
             id: 6,
             name: "Md. Jamaner Rahaman",
             designation: "Co-advisor",
-            image:
-                "https://res.cloudinary.com/draevbvcu/image/upload/v1745142756/IMG-20250420-WA0016_xjdo6q.jpg",
+            image: "https://res.cloudinary.com/draevbvcu/image/upload/v1745142756/IMG-20250420-WA0016_xjdo6q.jpg",
         },
         {
             id: 7,
             name: "Dipongkar Deb",
             designation: "Conference Chair",
-            image:
-                "https://res.cloudinary.com/draevbvcu/image/upload/v1745142757/IMG_20250331_004453_w0ojol.jpg",
+            image: "https://res.cloudinary.com/draevbvcu/image/upload/v1745142757/IMG_20250331_004453_w0ojol.jpg",
         },
         {
             id: 8,
             name: "Rayhan Ahmed",
             designation: "Convenor",
-            image:
-                "https://res.cloudinary.com/ddzsqf33b/image/upload/v1749200922/lurs/jenwrlksmzkxt1bmqlq6.jpg",
+            image: "https://res.cloudinary.com/ddzsqf33b/image/upload/v1749200922/lurs/jenwrlksmzkxt1bmqlq6.jpg",
         },
         {
             id: 9,
             name: "Md. Majidul Islam Rahat",
             designation: "Co-Convenor",
-            image:
-                "https://res.cloudinary.com/ddzsqf33b/image/upload/v1749200925/lurs/lpnoyashiirrduov4bio.jpg",
+            image: "https://res.cloudinary.com/ddzsqf33b/image/upload/v1749200925/lurs/lpnoyashiirrduov4bio.jpg",
         },
     ];
 
     useEffect(() => {
-        setIsVisible(true);
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.target && entry.target.id) {
+                        if (entry.isIntersecting) {
+                            setIsVisible((prev) => ({ ...prev, [entry.target.id]: true }));
+                        }
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        const elements = document.querySelectorAll('[data-animate]');
+        elements.forEach((el) => observer.observe(el));
 
         const timer = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % images.length);
         }, 5000);
 
-        return () => clearInterval(timer);
+        return () => {
+            observer.disconnect();
+            clearInterval(timer);
+        };
     }, [images.length]);
 
     const nextSlide = () => {
@@ -128,592 +142,323 @@ export default function SecondConferencePage() {
     };
 
     return (
-        <div className="min-h-screen bg-[#eef5fe]">
-            {/* Hero Section with Carousel */}
-            <section className="relative h-[600px] overflow-hidden">
-                {images.map((img, index) => (
-                    <div
-                        key={index}
-                        className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
-                            }`}
-                    >
-                        <Image
-                            src={img}
-                            alt={`Conference slide ${index + 1}`}
-                            fill
-                            className="object-cover"
-                            priority={index === 0}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#166a98]/90 via-[#166a98]/80 to-[#166a98]/70" />
-                    </div>
-                ))}
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+            {/* Hero Section */}
+            <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+                {/* Background with Carousel */}
+                <div className="absolute inset-0">
+                    {images.map((img, index) => (
+                        <div
+                            key={index}
+                            className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+                                }`}
+                        >
+                            <Image
+                                src={img}
+                                alt={`Conference slide ${index + 1}`}
+                                fill
+                                className="object-cover"
+                                priority={index === 0}
+                            />
+                        </div>
+                    ))}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#166a98]/95 via-blue-900/90 to-indigo-900/85" />
+                </div>
 
                 {/* Navigation Buttons */}
                 <button
                     onClick={prevSlide}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-3 rounded-full transition-all duration-300"
+                    className="absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-4 rounded-full transition-all duration-300 hover:scale-110"
                 >
                     <ChevronLeft className="w-6 h-6 text-white" />
                 </button>
                 <button
                     onClick={nextSlide}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-3 rounded-full transition-all duration-300"
+                    className="absolute right-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-4 rounded-full transition-all duration-300 hover:scale-110"
                 >
                     <ChevronRight className="w-6 h-6 text-white" />
                 </button>
 
+                {/* Hero Content */}
+                <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+                    <div className="mb-8">
+                        <span className="inline-block px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full text-white/90 font-semibold text-lg mb-6">
+                            🎓 LURS Conference 2025
+                        </span>
+                    </div>
+
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight">
+                        <span className="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+                            Student Research
+                        </span>
+                        <span className="block text-4xl md:text-5xl lg:text-6xl mt-4 text-blue-100">
+                            Conference 2025
+                        </span>
+                    </h1>
+
+                    <p className="text-2xl md:text-3xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
+                        Building A Sustainable World: Tackling Barriers and Exploring New Ideas
+                    </p>
+
+                    {/* Key Info Cards */}
+                    <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+                        <div className="backdrop-blur-lg bg-white/10 rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                            <Calendar className="w-8 h-8 text-white mx-auto mb-3" />
+                            <div className="text-white font-semibold text-lg">August 9, 2025</div>
+                            <div className="text-white/80 text-sm">Conference Date</div>
+                        </div>
+                        <div className="backdrop-blur-lg bg-white/10 rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                            <MapPin className="w-8 h-8 text-white mx-auto mb-3" />
+                            <div className="text-white font-semibold text-lg">Leading University</div>
+                            <div className="text-white/80 text-sm">Sylhet, Bangladesh</div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
                 {/* Slide Indicators */}
-                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
                     {images.map((_, index) => (
                         <button
                             key={index}
                             onClick={() => setCurrentSlide(index)}
-                            className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
+                            className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide
                                     ? "bg-white w-8"
-                                    : "bg-white/50 hover:bg-white/75"
+                                    : "bg-white/50 hover:bg-white/75 w-2"
                                 }`}
                         />
                     ))}
                 </div>
+            </section>
 
-                {/* Hero Content */}
-                <div className="absolute inset-0 z-10 flex items-center justify-center">
-                    <div className="max-w-5xl mx-auto px-4 text-center">
-                        <h1
-                            className={`text-4xl md:text-6xl font-bold text-white mb-6 transition-all duration-1000 delay-300 ${isVisible
-                                    ? "opacity-100 translate-y-0"
-                                    : "opacity-0 translate-y-10"
-                                }`}
-                        >
-                            LURS 2nd Student Research Conference 2025
-                        </h1>
-                        <p
-                            className={`text-xl md:text-3xl text-white/95 mb-8 font-medium transition-all duration-1000 delay-500 ${isVisible
-                                    ? "opacity-100 translate-y-0"
-                                    : "opacity-0 translate-y-10"
-                                }`}
-                        >
-                            Building A Sustainable World: Tackling Barriers and Exploring New
-                            Ideas
-                        </p>
-                        <div
-                            className={`flex flex-wrap justify-center gap-6 text-white/90 transition-all duration-1000 delay-700 ${isVisible
-                                    ? "opacity-100 translate-y-0"
-                                    : "opacity-0 translate-y-10"
-                                }`}
-                        >
-                            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
-                                <Calendar className="w-5 h-5" />
-                                <span className="font-medium">August 9, 2025</span>
+            {/* About Conference Section */}
+            <section className="py-24 px-6">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-16">
+                        <span className="inline-block px-4 py-2 bg-[#166a98]/10 text-[#166a98] rounded-full font-semibold mb-4">
+                            About the Conference
+                        </span>
+                        <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                            Conference <span className="text-[#166a98]">Overview</span>
+                        </h2>
+                        <div className="w-24 h-1 bg-gradient-to-r from-[#166a98] to-blue-500 mx-auto mb-8"></div>
+                    </div>
+
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        <div className="space-y-8">
+                            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100">
+                                <div className="flex items-start gap-4 mb-6">
+                                    <div className="w-12 h-12 bg-[#166a98]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <Target className="w-6 h-6 text-[#166a98]" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-gray-900 mb-2">Our Mission</h3>
+                                        <p className="text-gray-600 leading-relaxed">
+                                            The Leading University Research Society (LURS) successfully hosted the 2nd Student Research Conference 2025, bringing together students and young researchers from diverse disciplines.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
-                                <MapPin className="w-5 h-5" />
-                                <span className="font-medium">
-                                    Leading University, Sylhet, Bangladesh
-                                </span>
+
+                            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100">
+                                <div className="flex items-start gap-4 mb-6">
+                                    <div className="w-12 h-12 bg-[#166a98]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <Globe className="w-6 h-6 text-[#166a98]" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-gray-900 mb-2">National Platform</h3>
+                                        <p className="text-gray-600 leading-relaxed">
+                                            This national-level conference served as a prestigious interdisciplinary platform for the exchange of ideas and promotion of impactful research across multiple domains.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100">
+                                <div className="flex items-start gap-4 mb-6">
+                                    <div className="w-12 h-12 bg-[#166a98]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <TrendingUp className="w-6 h-6 text-[#166a98]" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-gray-900 mb-2">Real-World Impact</h3>
+                                        <p className="text-gray-600 leading-relaxed">
+                                            Participants gained valuable insights into how innovative research contributes to academic progression and addresses real-world challenges.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="relative">
+                            <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
+                                <Image
+                                    src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg"
+                                    alt="Conference presentation"
+                                    fill
+                                    className="object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#166a98]/20 to-transparent"></div>
+                            </div>
+
+                            {/* Floating Stats */}
+                            <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl p-6 shadow-xl border border-gray-100">
+                                <div className="text-3xl font-bold text-[#166a98] mb-1">500+</div>
+                                <div className="text-sm text-gray-600">Participants</div>
+                            </div>
+
+                            <div className="absolute -top-8 -right-8 bg-white rounded-2xl p-6 shadow-xl border border-gray-100">
+                                <div className="text-3xl font-bold text-[#166a98] mb-1">8+</div>
+                                <div className="text-sm text-gray-600">Research Domains</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Call for Abstract Section */}
-            <section className="py-16 px-4">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-4xl font-bold text-[#166a98] mb-8 text-center">
-                        Call for Abstract
-                    </h2>
-                    <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-                        <p className="text-lg text-gray-700 leading-relaxed">
-                            The Leading University Research Society (LURS) cordially invites
-                            specially students and young researchers from diverse disciplines
-                            to submit original research for presentation at the &ldquo;LURS 2nd
-                            Student Research Conference 2025&rdquo; (LURSSRC-2025). This
-                            national-level conference will serve as a prestigious
-                            interdisciplinary platform for the exchange of ideas and promotion
-                            of impactful research across domains such as Engineering, Science
-                            and Technology, Social Science, Political Science, Agriculture,
-                            Language and Literature etc. Participants will gain insights into
-                            how innovative research contributes to academic progression and
-                            addresses real-world challenges.
-                        </p>
+            {/* Conference Features */}
+            <section className="py-24 px-6 bg-gradient-to-br from-gray-50 to-blue-50">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-16">
+                        <span className="inline-block px-4 py-2 bg-[#166a98]/10 text-[#166a98] rounded-full font-semibold mb-4">
+                            Conference Features
+                        </span>
+                        <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                            What We <span className="text-[#166a98]">Achieved</span>
+                        </h2>
+                        <div className="w-24 h-1 bg-gradient-to-r from-[#166a98] to-blue-500 mx-auto"></div>
                     </div>
-                </div>
-            </section>
 
-            {/* Conference Highlights */}
-            <section className="py-16 px-4 bg-white/50">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-4xl font-bold text-[#166a98] mb-12 text-center">
-                        Conference Highlights
-                    </h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 border-t-4 border-[#166a98]">
-                            <Users className="w-12 h-12 text-[#166a98] mb-4" />
-                            <h3 className="text-xl font-bold text-[#166a98] mb-3">
-                                Presentation Segments
-                            </h3>
-                            <ul className="space-y-2 text-gray-700">
-                                <li className="flex items-start gap-2">
-                                    <span className="text-[#166a98] font-bold">1.</span>
-                                    <span>Oral Presentation</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <span className="text-[#166a98] font-bold">2.</span>
-                                    <span>Poster Presentation</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 border-t-4 border-[#166a98]">
-                            <Award className="w-12 h-12 text-[#166a98] mb-4" />
-                            <h3 className="text-xl font-bold text-[#166a98] mb-3">
-                                Certificates & Awards
-                            </h3>
-                            <ul className="space-y-2 text-gray-700">
-                                <li className="flex items-start gap-2">
-                                    <span className="text-[#166a98]">•</span>
-                                    <span>Certificates for all participants</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <span className="text-[#166a98]">•</span>
-                                    <span>Best Abstract and Poster: Prize Money 7500 BDT+</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 border-t-4 border-[#166a98]">
-                            <FileText className="w-12 h-12 text-[#166a98] mb-4" />
-                            <h3 className="text-xl font-bold text-[#166a98] mb-3">
-                                Research Scope
-                            </h3>
-                            <ul className="space-y-2 text-gray-700 text-sm">
-                                <li className="flex items-start gap-2">
-                                    <span className="text-[#166a98]">•</span>
-                                    <span>Engineering, Science and Technology</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <span className="text-[#166a98]">•</span>
-                                    <span>Computer Science and AI</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <span className="text-[#166a98]">•</span>
-                                    <span>Life Science & Agriculture</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <span className="text-[#166a98]">•</span>
-                                    <span>Social Sciences and Public Policy</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <span className="text-[#166a98]">•</span>
-                                    <span>Language, Literature, and Cultural Studies</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <span className="text-[#166a98]">•</span>
-                                    <span>Economics, Business, and Entrepreneurship</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <span className="text-[#166a98]">•</span>
-                                    <span>Education and Development Studies</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <span className="text-[#166a98]">•</span>
-                                    <span>Environmental and Sustainability Research</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Submission Guidelines */}
-            <section className="py-16 px-4">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-4xl font-bold text-[#166a98] mb-12 text-center">
-                        Extended Abstract Submission Guidelines
-                    </h2>
-                    <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-                        <ul className="space-y-4 text-gray-700">
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#166a98] font-bold text-lg">•</span>
-                                <span>
-                                    <strong className="text-[#166a98]">
-                                        Title, Authors & Affiliations:
-                                    </strong>{" "}
-                                    The extended abstract must include the title, the names and
-                                    affiliations of all authors, and the presenter&apos;s name
-                                    should be underlined.
-                                </span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#166a98] font-bold text-lg">•</span>
-                                <span>
-                                    <strong className="text-[#166a98]">Keywords:</strong> Three to
-                                    five keywords of the extended abstract should be provided.
-                                </span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#166a98] font-bold text-lg">•</span>
-                                <span>
-                                    The extended abstract should contain{" "}
-                                    <strong className="text-[#166a98]">700-1000 words</strong>,
-                                    including the Introduction, Methodology, Results, and
-                                    Conclusion sections. References are not counted in the word
-                                    limit.
-                                </span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#166a98] font-bold text-lg">•</span>
-                                <span>
-                                    <strong className="text-[#166a98]">Referencing Style:</strong>{" "}
-                                    IEEE style for Engineering, Science and Technology; APA style
-                                    for other disciplines.
-                                </span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#166a98] font-bold text-lg">•</span>
-                                <span>
-                                    <strong className="text-[#166a98]">File Name:</strong>{" "}
-                                    (LastName_FirstName_AbstractTitle); File Format- Microsoft
-                                    Word (.docx) + PDF (.pdf)
-                                </span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#166a98] font-bold text-lg">•</span>
-                                <span>
-                                    <strong className="text-[#166a98]">Font:</strong> Times New
-                                    Roman, <strong className="text-[#166a98]">Size:</strong> 12
-                                </span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#166a98] font-bold text-lg">•</span>
-                                <span>
-                                    Submissions must be{" "}
-                                    <strong className="text-[#166a98]">original</strong> and{" "}
-                                    <strong className="text-[#166a98]">unpublished</strong>. All
-                                    submissions must be written in English.
-                                </span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#166a98] font-bold text-lg">•</span>
-                                <span>
-                                    The participants can participate on their own or
-                                    cross-university as well. A{" "}
-                                    <strong className="text-[#166a98]">maximum of three</strong>{" "}
-                                    participants in a team.
-                                </span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#166a98] font-bold text-lg">•</span>
-                                <span>
-                                    All abstracts will undergo rigorous{" "}
-                                    <strong className="text-[#166a98]">peer review</strong> by an
-                                    academic panel.
-                                </span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#166a98] font-bold text-lg">•</span>
-                                <span>
-                                    Time allocated for oral presentation:{" "}
-                                    <strong className="text-[#166a98]">
-                                        approximately 5 minutes
-                                    </strong>
-                                    .
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            {/* Poster Presentation Guidelines */}
-            <section className="py-16 px-4 bg-white/50">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-4xl font-bold text-[#166a98] mb-12 text-center">
-                        Poster Presentation Guidelines
-                    </h2>
-                    <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-                        <ul className="space-y-4 text-gray-700">
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#166a98] font-bold text-lg">•</span>
-                                <span>
-                                    <strong className="text-[#166a98]">Title:</strong> Ensure it
-                                    is clear, concise, and easy to read from a distance
-                                </span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#166a98] font-bold text-lg">•</span>
-                                <span>
-                                    <strong className="text-[#166a98]">
-                                        Authors & Affiliations:
-                                    </strong>{" "}
-                                    Include names, institutions, and contact info.
-                                </span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#166a98] font-bold text-lg">•</span>
-                                <span>
-                                    <strong className="text-[#166a98]">Sections:</strong> Organize
-                                    content into Introduction (background & objectives), Methods
-                                    (brief and visual if possible), Results (key findings with
-                                    visuals), Discussion (interpretation and implications),
-                                    Conclusion (summary and future direction), and optional
-                                    Acknowledgments and References.
-                                </span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#166a98] font-bold text-lg">•</span>
-                                <span>
-                                    <strong className="text-[#166a98]">Size:</strong> Use a
-                                    standard poster size;{" "}
-                                    <strong className="text-[#166a98]">Layout:</strong> Use a
-                                    clean, logical structure (e.g., 2-4 columns)
-                                </span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#166a98] font-bold text-lg">•</span>
-                                <span>
-                                    <strong className="text-[#166a98]">Font Sizes:</strong> Use
-                                    clear fonts and scale text sizes so the title, headings, and
-                                    body are easily readable from a distance.
-                                </span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-[#166a98] font-bold text-lg">•</span>
-                                <span>
-                                    Time allocated for poster presentation:{" "}
-                                    <strong className="text-[#166a98]">
-                                        approximately 2-3 minutes
-                                    </strong>
-                                    .
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            {/* Important Dates */}
-            <section className="py-16 px-4">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-4xl font-bold text-[#166a98] mb-12 text-center">
-                        Important Dates
-                    </h2>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300">
-                            <Clock className="w-10 h-10 text-[#166a98] mb-4" />
-                            <h3 className="text-lg font-bold text-[#166a98] mb-2">
-                                Extended Abstract Submission Deadline
-                            </h3>
-                            <p className="text-2xl font-bold text-gray-800">June 30, 2025</p>
-                        </div>
-                        <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300">
-                            <Clock className="w-10 h-10 text-[#166a98] mb-4" />
-                            <h3 className="text-lg font-bold text-[#166a98] mb-2">
-                                Notification of Acceptance
-                            </h3>
-                            <p className="text-2xl font-bold text-gray-800">July 15, 2025</p>
-                        </div>
-                        <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300">
-                            <Calendar className="w-10 h-10 text-[#166a98] mb-4" />
-                            <h3 className="text-lg font-bold text-[#166a98] mb-2">
-                                Conference Date
-                            </h3>
-                            <p className="text-2xl font-bold text-gray-800">August 9, 2025</p>
-                        </div>
-                        <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300">
-                            <Users className="w-10 h-10 text-[#166a98] mb-4" />
-                            <h3 className="text-lg font-bold text-[#166a98] mb-2">
-                                Registration Deadline (Abstract Submission)
-                            </h3>
-                            <p className="text-2xl font-bold text-gray-800">June 30, 2025</p>
-                        </div>
-                        <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300">
-                            <Users className="w-10 h-10 text-[#166a98] mb-4" />
-                            <h3 className="text-lg font-bold text-[#166a98] mb-2">
-                                Registration Deadline (Poster Presentation)
-                            </h3>
-                            <p className="text-2xl font-bold text-gray-800">July 15, 2025</p>
-                        </div>
-                        <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300">
-                            <Users className="w-10 h-10 text-[#166a98] mb-4" />
-                            <h3 className="text-lg font-bold text-[#166a98] mb-2">
-                                Registration Deadline (Conference Participation)
-                            </h3>
-                            <p className="text-2xl font-bold text-gray-800">July 25, 2025</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Registration Fees */}
-            <section className="py-16 px-4 bg-white/50">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-4xl font-bold text-[#166a98] mb-12 text-center">
-                        Registration Fees
-                    </h2>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 border-t-4 border-[#166a98]">
-                            <DollarSign className="w-12 h-12 text-[#166a98] mb-4" />
-                            <h3 className="text-xl font-bold text-[#166a98] mb-4">
-                                Abstract Registration
-                            </h3>
-                            <ul className="space-y-2 text-gray-700">
-                                <li className="flex justify-between">
-                                    <span>Per individual</span>
-                                    <span className="font-bold text-[#166a98]">500 BDT</span>
-                                </li>
-                                <li className="flex justify-between">
-                                    <span>Two persons</span>
-                                    <span className="font-bold text-[#166a98]">800 BDT</span>
-                                </li>
-                                <li className="flex justify-between">
-                                    <span>Three persons</span>
-                                    <span className="font-bold text-[#166a98]">1000 BDT</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 border-t-4 border-[#166a98]">
-                            <DollarSign className="w-12 h-12 text-[#166a98] mb-4" />
-                            <h3 className="text-xl font-bold text-[#166a98] mb-4">
-                                Poster Presentation
-                            </h3>
-                            <ul className="space-y-2 text-gray-700">
-                                <li className="flex justify-between">
-                                    <span>Per individual</span>
-                                    <span className="font-bold text-[#166a98]">350 BDT</span>
-                                </li>
-                                <li className="flex justify-between">
-                                    <span>Two persons</span>
-                                    <span className="font-bold text-[#166a98]">550 BDT</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 border-t-4 border-[#166a98]">
-                            <DollarSign className="w-12 h-12 text-[#166a98] mb-4" />
-                            <h3 className="text-xl font-bold text-[#166a98] mb-4">
-                                Conference Participants
-                            </h3>
-                            <ul className="space-y-2 text-gray-700">
-                                <li className="flex justify-between">
-                                    <span>Per individual</span>
-                                    <span className="font-bold text-[#166a98]">200 BDT</span>
-                                </li>
-                            </ul>
-                            <p className="text-sm text-gray-600 mt-4 italic">
-                                International participants are requested to contact us via
-                                email.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Registration & Payment */}
-            <section className="py-16 px-4">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-4xl font-bold text-[#166a98] mb-12 text-center">
-                        Registration Process
-                    </h2>
-                    <div className="grid md:grid-cols-2 gap-8">
-                        <div className="bg-white rounded-2xl shadow-xl p-8">
-                            <h3 className="text-2xl font-bold text-[#166a98] mb-6">
-                                How to Register
-                            </h3>
-                            <ul className="space-y-4">
-                                <li className="flex items-start gap-3">
-                                    <span className="text-[#166a98] font-bold text-lg">1.</span>
-                                    <div>
-                                        <strong className="text-[#166a98]">
-                                            For Abstract Submission:
-                                        </strong>{" "}
-                                        <a
-                                            href="https://forms.gle/YcHU6a89eKwA2Vvi8"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-blue-600 hover:underline"
-                                        >
-                                            Click Here
-                                        </a>
-                                    </div>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="text-[#166a98] font-bold text-lg">2.</span>
-                                    <div>
-                                        <strong className="text-[#166a98]">
-                                            For Poster Presentation:
-                                        </strong>{" "}
-                                        <a
-                                            href="https://forms.gle/H3q8J3viSs5CT9Qk8"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-blue-600 hover:underline"
-                                        >
-                                            Click Here
-                                        </a>
-                                    </div>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="text-[#166a98] font-bold text-lg">3.</span>
-                                    <div>
-                                        <strong className="text-[#166a98]">
-                                            For Conference Participation:
-                                        </strong>{" "}
-                                        <a
-                                            href="https://forms.gle/3cSSaj77etkWCMzp7"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-blue-600 hover:underline"
-                                        >
-                                            Click Here
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                            <p className="mt-6 text-sm text-gray-600 bg-blue-50 p-4 rounded-lg">
-                                <strong>N.B:</strong> After payment, submit your abstract via
-                                the link (google form) and fill up the google form with
-                                transaction ID
-                            </p>
-                        </div>
-
-                        <div className="bg-white rounded-2xl shadow-xl p-8">
-                            <h3 className="text-2xl font-bold text-[#166a98] mb-6">
-                                Payment Information
-                            </h3>
-                            <div className="bg-gradient-to-br from-[#166a98] to-blue-600 rounded-xl p-6 text-white mb-6">
-                                <p className="text-sm mb-2 opacity-90">Send payment to:</p>
-                                <p className="text-3xl font-bold">Bkash: 01646-035041</p>
+                        {/* Presentation Segments */}
+                        <div className="group bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                            <div className="w-16 h-16 bg-gradient-to-br from-[#166a98] to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <Users className="w-8 h-8 text-white" />
                             </div>
-                            <div className="space-y-4">
-                                <h4 className="text-xl font-bold text-[#166a98]">
-                                    Refund Policy
-                                </h4>
-                                <ul className="space-y-3">
-                                    <li className="flex items-start gap-3">
-                                        <span className="text-[#166a98] font-bold text-lg">1.</span>
-                                        <span>
-                                            <strong className="text-[#166a98]">Full Refund:</strong>{" "}
-                                            If the abstract is rejected and you choose not to
-                                            participate.
-                                        </span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <span className="text-[#166a98] font-bold text-lg">2.</span>
-                                        <span>
-                                            <strong className="text-[#166a98]">40% Refund:</strong> If
-                                            the abstract is rejected but you still choose to
-                                            participate.
-                                        </span>
-                                    </li>
-                                </ul>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4">Presentation Formats</h3>
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-3">
+                                    <CheckCircle className="w-5 h-5 text-[#166a98]" />
+                                    <span className="text-gray-700">Oral Presentations</span>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <CheckCircle className="w-5 h-5 text-[#166a98]" />
+                                    <span className="text-gray-700">Poster Sessions</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Awards */}
+                        <div className="group bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                            <div className="w-16 h-16 bg-gradient-to-br from-[#166a98] to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <Award className="w-8 h-8 text-white" />
+                            </div>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4">Recognition & Awards</h3>
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-3">
+                                    <Star className="w-5 h-5 text-[#166a98]" />
+                                    <span className="text-gray-700">Certificates for all</span>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <Star className="w-5 h-5 text-[#166a98]" />
+                                    <span className="text-gray-700">Prize Money 7500+ BDT</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Research Domains */}
+                        <div className="group bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 md:col-span-2 lg:col-span-1">
+                            <div className="w-16 h-16 bg-gradient-to-br from-[#166a98] to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <FileText className="w-8 h-8 text-white" />
+                            </div>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4">Research Domains</h3>
+                            <div className="grid grid-cols-1 gap-2 text-sm">
+                                <div className="flex items-center gap-2">
+                                    <Zap className="w-4 h-4 text-[#166a98]" />
+                                    <span className="text-gray-700">Engineering & Technology</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Zap className="w-4 h-4 text-[#166a98]" />
+                                    <span className="text-gray-700">Computer Science & AI</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Zap className="w-4 h-4 text-[#166a98]" />
+                                    <span className="text-gray-700">Life Sciences & Agriculture</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Zap className="w-4 h-4 text-[#166a98]" />
+                                    <span className="text-gray-700">Social Sciences</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Zap className="w-4 h-4 text-[#166a98]" />
+                                    <span className="text-gray-700">Literature & Cultural Studies</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Zap className="w-4 h-4 text-[#166a98]" />
+                                    <span className="text-gray-700">Business & Economics</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Zap className="w-4 h-4 text-[#166a98]" />
+                                    <span className="text-gray-700">Environmental Studies</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Zap className="w-4 h-4 text-[#166a98]" />
+                                    <span className="text-gray-700">Education & Development</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            {/* Conference Gallery */}
+            <section className="py-16 px-4">
+                <div className="max-w-6xl mx-auto">
+                    <h2 className="text-4xl font-bold text-[#166a98] mb-12 text-center">
+                        Conference Gallery
+                    </h2>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        {galleryImages.map((img, index) => (
+                            <div
+                                key={index}
+                                className="relative h-64 rounded-xl overflow-hidden cursor-pointer group"
+                                onClick={() => setLightboxImage(img)}
+                            >
+                                <Image
+                                    src={img}
+                                    alt={`Gallery image ${index + 1}`}
+                                    fill
+                                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-[#166a98]/0 group-hover:bg-[#166a98]/30 transition-all duration-300" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Lightbox Modal */}
+            {lightboxImage && (
+                <div
+                    className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+                    onClick={() => setLightboxImage(null)}
+                >
+                    <button
+                        className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+                        onClick={() => setLightboxImage(null)}
+                    >
+                        <X className="w-8 h-8" />
+                    </button>
+                    <div className="relative max-w-5xl w-full h-full flex items-center justify-center">
+                        <Image
+                            src={lightboxImage}
+                            alt="Gallery image"
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
+                </div>
+            )}
 
             {/* Conference Committee */}
             <section className="py-16 px-4 bg-white/50">
@@ -769,55 +514,6 @@ export default function SecondConferencePage() {
                 </div>
             </section>
 
-            {/* Conference Gallery */}
-            <section className="py-16 px-4">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-4xl font-bold text-[#166a98] mb-12 text-center">
-                        Conference Gallery
-                    </h2>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                        {galleryImages.map((img, index) => (
-                            <div
-                                key={index}
-                                className="relative h-64 rounded-xl overflow-hidden cursor-pointer group"
-                                onClick={() => setLightboxImage(img)}
-                            >
-                                <Image
-                                    src={img}
-                                    alt={`Gallery image ${index + 1}`}
-                                    fill
-                                    className="object-cover transition-transform duration-300 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-[#166a98]/0 group-hover:bg-[#166a98]/30 transition-all duration-300" />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Lightbox Modal */}
-            {lightboxImage && (
-                <div
-                    className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-                    onClick={() => setLightboxImage(null)}
-                >
-                    <button
-                        className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
-                        onClick={() => setLightboxImage(null)}
-                    >
-                        <X className="w-8 h-8" />
-                    </button>
-                    <div className="relative max-w-5xl w-full h-full flex items-center justify-center">
-                        <Image
-                            src={lightboxImage}
-                            alt="Gallery image"
-                            fill
-                            className="object-contain"
-                        />
-                    </div>
-                </div>
-            )}
-
             {/* Contact Section */}
             <section className="py-16 px-4 bg-white/50">
                 <div className="max-w-6xl mx-auto">
@@ -863,9 +559,9 @@ export default function SecondConferencePage() {
 
                     <div className="mt-12 bg-white rounded-2xl shadow-xl p-8 text-center">
                         <p className="text-lg text-gray-700 leading-relaxed">
-                            LURS (Leading University Research Society) proudly hosts this
+                            LURS (Leading University Research Society) proudly hosted this
                             national-level platform to celebrate and empower research that
-                            shapes the unseen future. Join us in this intellectual journey
+                            shapes the future. Thank you for being part of this intellectual journey
                             toward innovation and discovery.
                         </p>
                     </div>

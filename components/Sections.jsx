@@ -1,11 +1,13 @@
 "use client";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Sections = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isVisible, setIsVisible] = useState({});
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [currentVideo, setCurrentVideo] = useState(0);
 
     // Section 1 - Objectives Data
     const objectives = [
@@ -52,14 +54,14 @@ const Sections = () => {
         {
             id: 1,
             name: "Dr. Shafkat Kibria",
-            
+
             position: "Advisor",
             image: "https://res.cloudinary.com/draevbvcu/image/upload/v1745142755/FB_IMG_1745141103346_rykcyf.jpg"
         },
         {
             id: 2,
             name: "Md. Jamaner Rahaman",
-            
+
             position: "Co-advisor",
             image: "https://res.cloudinary.com/draevbvcu/image/upload/v1745142756/IMG-20250420-WA0016_xjdo6q.jpg"
         }
@@ -67,10 +69,11 @@ const Sections = () => {
 
     // Section 4 - Highlights Images
     const highlightImages = [
-        "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800"
+        "https://i.ibb.co.com/C5Ptq3NB/gallery3.jpg",
+        "https://i.ibb.co.com/m5Y3rvPQ/newsletter.jpg",
+        "https://i.ibb.co.com/JF3h27kM/1success3.jpg",
+        "https://i.ibb.co.com/Rk8ngy4S/gallery2.jpg",
+
     ];
 
     // Section 5 - Important Notices
@@ -105,12 +108,136 @@ const Sections = () => {
         }
     ];
 
+    // Section 5 - Video URLs
+    const videos = [
+        "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Flursbd%2Fvideos%2F1029925765595905%2F&show_text=false&width=560&t=0",
+        "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Flursbd%2Fvideos%2F686481963840786%2F&show_text=false&width=560&t=0",
+        
+    ];
+
     // Section 6 - Gallery Images
-    const galleryImages = Array.from({ length: 24 }, (_, i) => ({
-        id: i + 1,
-        src: `https://picsum.photos/400/300?random=${i + 1}`,
-        alt: `Gallery image ${i + 1}`
-    }));
+    const galleryImages = [
+        {
+            id: 1,
+            src: "https://i.ibb.co.com/C5Ptq3NB/gallery3.jpg",
+            alt: "Research Gallery Image 1"
+        },
+        {
+            id: 2,
+            src: "https://i.ibb.co.com/m5Y3rvPQ/newsletter.jpg",
+            alt: "Research Gallery Image 2"
+        },
+        {
+            id: 3,
+            src: "https://i.ibb.co.com/JF3h27kM/1success3.jpg",
+            alt: "Research Gallery Image 3"
+        },
+        {
+            id: 4,
+            src: "https://i.ibb.co.com/Rk8ngy4S/gallery2.jpg",
+            alt: "Research Gallery Image 4"
+        },
+        {
+            id: 5,
+            src: "https://i.ibb.co.com/fYF44DLL/1-success10.jpg",
+            alt: "Research Gallery Image 5"
+        },
+        {
+            id: 6,
+            src: "https://i.ibb.co.com/S7f5f2D1/1success6.jpg",
+            alt: "Research Gallery Image 6"
+        },
+        {
+            id: 7,
+            src: "https://i.ibb.co.com/MxNK4D36/1success9.jpg",
+            alt: "Research Gallery Image 7"
+        },
+        {
+            id: 8,
+            src: "https://i.ibb.co.com/Zpd7jXpp/gallery6.jpg",
+            alt: "Research Gallery Image 8"
+        },
+        {
+            id: 9,
+            src: "https://i.ibb.co.com/4nT2D5C0/gallery14.jpg",
+            alt: "Research Gallery Image 9"
+        },
+        {
+            id: 10,
+            src: "https://i.ibb.co.com/mgRD919/1success17.jpg",
+            alt: "Research Gallery Image 10"
+        },
+        {
+            id: 11,
+            src: "https://i.ibb.co.com/7NVhT6X7/1success15.jpg",
+            alt: "Research Gallery Image 11"
+        },
+        {
+            id: 12,
+            src: "https://i.ibb.co.com/4ZZ7Bdct/associate1.jpg",
+            alt: "Research Gallery Image 12"
+        },
+        {
+            id: 13,
+            src: "https://i.ibb.co.com/GfMtyTFQ/gallery19-1.jpg",
+            alt: "Research Gallery Image 13"
+        },
+        {
+            id: 14,
+            src: "https://i.ibb.co.com/NGTNGYc/1success8.jpg",
+            alt: "Research Gallery Image 14"
+        },
+        {
+            id: 15,
+            src: "https://i.ibb.co.com/hxstkwC6/1success1.jpg",
+            alt: "Research Gallery Image 15"
+        },
+        {
+            id: 16,
+            src: "https://i.ibb.co.com/6cL898Y8/1success12.jpg",
+            alt: "Research Gallery Image 16"
+        },
+        {
+            id: 17,
+            src: "https://i.ibb.co.com/dw2z5Qrv/1success14.jpg",
+            alt: "Research Gallery Image 17"
+        },
+        {
+            id: 18,
+            src: "https://i.ibb.co.com/n8tpQVT4/1success13.jpg",
+            alt: "Research Gallery Image 18"
+        },
+        {
+            id: 19,
+            src: "https://i.ibb.co.com/zTKWvJyX/gallery5.jpg",
+            alt: "Research Gallery Image 19"
+        },
+        {
+            id: 20,
+            src: "https://i.ibb.co.com/B52cLGrH/gallery18.jpg",
+            alt: "Research Gallery Image 20"
+        },
+        {
+            id: 21,
+            src: "https://i.ibb.co.com/SXQ846V6/independenceday25.jpg",
+            alt: "Research Gallery Image 21"
+        },
+        {
+            id: 22,
+            src: "https://i.ibb.co.com/Z6p33270/newvc.jpg",
+            alt: "Research Gallery Image 22"
+        },
+        {
+            id: 23,
+            src: "https://i.ibb.co.com/XZGFXTJd/1success5.jpg",
+            alt: "Research Gallery Image 23"
+        },
+        {
+            id: 24,
+            src: "https://i.ibb.co.com/VYMvNQgH/exmeeting1.jpg",
+            alt: "Research Gallery Image 24"
+        }
+    ];
 
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % highlightImages.length);
@@ -118,6 +245,14 @@ const Sections = () => {
 
     const prevSlide = () => {
         setCurrentSlide((prev) => (prev - 1 + highlightImages.length) % highlightImages.length);
+    };
+
+    const nextVideo = () => {
+        setCurrentVideo((prev) => (prev + 1) % videos.length);
+    };
+
+    const prevVideo = () => {
+        setCurrentVideo((prev) => (prev - 1 + videos.length) % videos.length);
     };
 
     // Intersection Observer for scroll animations
@@ -251,7 +386,7 @@ const Sections = () => {
                                         <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#176b98] transition-colors duration-300">
                                             {advisor.name}
                                         </h3>
-                                        
+
                                         <p className="text-gray-600 font-medium">
                                             {advisor.position}
                                         </p>
@@ -265,7 +400,7 @@ const Sections = () => {
 
             {/* Section 3 - Upcoming Event */}
             <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-gray-50 relative overflow-hidden" id="upcoming-event" data-animate>
-                {/* Animated particles */}
+
                 <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute top-10 left-1/4 w-2 h-2 bg-[#176b98] rounded-full animate-ping"></div>
                     <div className="absolute top-32 right-1/3 w-3 h-3 bg-[#176b98] rounded-full animate-pulse"></div>
@@ -284,18 +419,18 @@ const Sections = () => {
                             }}
                         >
                             <Image
-                                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
-                                alt="Upcoming Event"
+                                src="https://i.ibb.co.com/23Tky3cz/workshop.jpg"
+                                alt="Workshop on Research Fundamentals and Academic Paper Writing"
                                 fill
                                 className="object-cover group-hover:scale-110 transition-transform duration-700"
                             />
                             <div className="absolute inset-0 bg-gradient-to-r from-[#176b98]/30 to-transparent group-hover:from-[#176b98]/50 transition-all duration-500"></div>
 
-                            {/* Glass morphism overlay */}
+
                             <div className="absolute inset-0 bg-white/5 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                            {/* Floating globe icon */}
-                            <div className="absolute top-6 right-6 text-5xl animate-spin-slow">🌐</div>
+
+                            <div className="absolute top-6 right-6 text-5xl animate-spin-slow"></div>
                         </div>
 
                         <div
@@ -307,32 +442,40 @@ const Sections = () => {
                             }}
                         >
                             <div className="inline-block px-5 py-2 bg-gradient-to-r from-[#176b98]/20 to-[#176b98]/10 backdrop-blur-sm rounded-full text-[#176b98] font-bold text-sm mb-6 animate-pulse border border-[#176b98]/30">
-                                ✨ UPCOMING EVENT
+                                ✨ WORKSHOP ANNOUNCEMENT
                             </div>
                             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                                International Research <span className="text-[#176b98] animate-gradient-text">Summit 2025</span>
+                                Research Fundamentals & <span className="text-[#176b98] animate-gradient-text">Academic Paper Writing</span>
                             </h2>
                             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                                Join researchers from around the world for three days of groundbreaking presentations,
-                                networking opportunities, and collaborative discussions on the future of research and innovation.
+                                A 3-month intensive online program to build a solid foundation in academic research and paper writing skills. Learn to develop a publication-ready research paper with expert guidance and mentorship.
                             </p>
                             <div className="space-y-4 mb-8">
                                 <div className="flex items-center text-gray-700 p-3 bg-white/50 backdrop-blur-sm rounded-lg hover:bg-white/80 transition-all duration-300 hover:translate-x-2">
-                                    <span className="font-bold w-24 text-[#176b98]">📅 Date:</span>
-                                    <span>May 15-17, 2025</span>
+                                    <span className="font-bold w-32 text-[#176b98]">📅 Duration:</span>
+                                    <span>3 Months (24 Sessions)</span>
                                 </div>
                                 <div className="flex items-center text-gray-700 p-3 bg-white/50 backdrop-blur-sm rounded-lg hover:bg-white/80 transition-all duration-300 hover:translate-x-2">
-                                    <span className="font-bold w-24 text-[#176b98]">📍 Venue:</span>
-                                    <span>Leading University Main Auditorium</span>
+                                    <span className="font-bold w-32 text-[#176b98]">💻 Mode:</span>
+                                    <span>Online (Interactive)</span>
                                 </div>
                                 <div className="flex items-center text-gray-700 p-3 bg-white/50 backdrop-blur-sm rounded-lg hover:bg-white/80 transition-all duration-300 hover:translate-x-2">
-                                    <span className="font-bold w-24 text-[#176b98]">⏰ Time:</span>
-                                    <span>9:00 AM - 6:00 PM</span>
+                                    <span className="font-bold w-32 text-[#176b98]">⏰ Schedule:</span>
+                                    <span>2 classes/week (1.5 hours each)</span>
+                                </div>
+                                <div className="flex items-center text-gray-700 p-3 bg-white/50 backdrop-blur-sm rounded-lg hover:bg-white/80 transition-all duration-300 hover:translate-x-2">
+                                    <span className="font-bold w-32 text-[#176b98]">🗓️ Deadline:</span>
+                                    <span>October 25, 2025</span>
                                 </div>
                             </div>
-                            <button className="px-8 py-4 bg-gradient-to-r from-[#176b98] to-[#1a7fb8] text-white font-bold rounded-full hover:shadow-[0_10px_40px_rgba(23,107,152,0.4)] transition-all duration-300 hover:scale-105 transform hover:-translate-y-1">
+                            <a
+                                href="https://forms.gle/1hykPcGHTFKNDntx7"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block px-8 py-4 bg-gradient-to-r from-[#176b98] to-[#1a7fb8] text-white font-bold rounded-full hover:shadow-[0_10px_40px_rgba(23,107,152,0.4)] transition-all duration-300 hover:scale-105 transform hover:-translate-y-1"
+                            >
                                 Register Now →
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -340,15 +483,7 @@ const Sections = () => {
 
             {/* Section 4 - Highlights */}
             <section className="py-20 bg-gray-900 relative overflow-hidden" id="highlights" data-animate>
-                <div className="absolute inset-0">
-                    <Image
-                        src={highlightImages[currentSlide]}
-                        alt="Highlights"
-                        fill
-                        className="object-cover opacity-30 transition-opacity duration-1000"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60"></div>
-                </div>
+                <div className="absolute inset-0 bg-gray-900"></div>
 
                 {/* Animated particles */}
                 <div className="absolute inset-0 pointer-events-none">
@@ -361,25 +496,21 @@ const Sections = () => {
                 <div className="container max-w-7xl mx-auto px-4 relative z-10">
                     <div className="text-center mb-16" data-animate>
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-gradient-text">
-                            Research <span className="text-[#176b98]">Highlights</span>
+                            Our <span className="text-[#176b98]">Highlights</span>
                         </h2>
                         <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                            Showcasing our latest achievements and breakthrough research
+                            Showcasing our latest achievements and events
                         </p>
                     </div>
 
                     <div className="relative max-w-4xl mx-auto">
-                        <div className="relative h-96 rounded-3xl overflow-hidden shadow-[0_20px_80px_rgba(23,107,152,0.3)] backdrop-blur-sm border border-white/10">
+                        <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-[0_20px_80px_rgba(23,107,152,0.3)] bg-gray-800 border border-white/10">
                             <Image
                                 src={highlightImages[currentSlide]}
                                 alt={`Highlight ${currentSlide + 1}`}
                                 fill
-                                className="object-cover transition-all duration-700"
+                                className="object-contain transition-all duration-700"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-
-                            {/* Glass morphism overlay */}
-                            <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px]"></div>
                         </div>
 
                         <button
@@ -436,13 +567,14 @@ const Sections = () => {
                         {galleryImages.map((image, index) => (
                             <div
                                 key={image.id}
-                                className="group relative aspect-square overflow-hidden rounded-2xl hover:scale-105 hover:z-10 transition-all duration-500 shadow-lg hover:shadow-[0_10px_40px_rgba(23,107,152,0.3)]"
+                                className="group relative aspect-square overflow-hidden rounded-2xl hover:scale-105 hover:z-10 transition-all duration-500 shadow-lg hover:shadow-[0_10px_40px_rgba(23,107,152,0.3)] cursor-pointer"
                                 data-animate
                                 style={{
                                     opacity: isVisible['gallery'] ? 1 : 0,
                                     transform: isVisible['gallery'] ? 'scale(1)' : 'scale(0.8)',
                                     transition: `all 0.5s ease ${index * 0.03}s`
                                 }}
+                                onClick={() => setSelectedImage(image)}
                             >
                                 <Image
                                     src={image.src}
@@ -468,21 +600,49 @@ const Sections = () => {
                 </div>
             </section>
 
-            {/* Section 7 - News */}
-            <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden" id="news" data-animate>
+            {/* Image Modal */}
+            {selectedImage && (
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 animate-fadeIn"
+                    onClick={() => setSelectedImage(null)}
+                >
+                    <button
+                        onClick={() => setSelectedImage(null)}
+                        className="absolute top-4 right-4 bg-white/10 backdrop-blur-md rounded-full p-3 hover:bg-[#176b98]/80 transition-all duration-300 hover:scale-110 border border-white/20 hover:border-[#176b98] z-10"
+                        aria-label="Close modal"
+                    >
+                        <X className="text-white" size={24} />
+                    </button>
+                    <div
+                        className="relative max-w-7xl max-h-[90vh] w-full h-full"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <Image
+                            src={selectedImage.src}
+                            alt={selectedImage.alt}
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
+                </div>
+            )}
+
+            {/* Section 7 - Our Moments */}
+            <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden" id="moments" data-animate>
                 {/* Animated particles */}
                 <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute top-20 left-1/4 w-2 h-2 bg-[#176b98] rounded-full animate-ping"></div>
                     <div className="absolute bottom-32 right-1/3 w-3 h-3 bg-[#176b98] rounded-full animate-pulse"></div>
+                    <div className="absolute top-1/2 right-1/4 w-2 h-2 bg-[#176b98] rounded-full animate-ping" style={{ animationDelay: '1.5s' }}></div>
                 </div>
 
                 <div className="container max-w-7xl mx-auto px-4 relative z-10">
                     <div className="text-center mb-16" data-animate>
                         <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-gradient-text">
-                            Latest <span className="text-[#176b98]">News</span>
+                            Our <span className="text-[#176b98]">Moments</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                            Watch our latest research updates and announcements
+                            Relive our memorable events and achievements through these videos
                         </p>
                     </div>
 
@@ -490,50 +650,65 @@ const Sections = () => {
                         className="max-w-4xl mx-auto"
                         data-animate
                         style={{
-                            opacity: isVisible['news'] ? 1 : 0,
-                            transform: isVisible['news'] ? 'scale(1)' : 'scale(0.95)',
+                            opacity: isVisible['moments'] ? 1 : 0,
+                            transform: isVisible['moments'] ? 'scale(1)' : 'scale(0.95)',
                             transition: 'all 0.8s ease 0.2s'
                         }}
                     >
-                        <div className="relative aspect-video rounded-3xl overflow-hidden shadow-[0_20px_80px_rgba(23,107,152,0.3)] group border border-gray-200/50">
-                            <Image
-                                src="https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                                alt="News Video Placeholder"
-                                fill
-                                className="object-cover group-hover:scale-110 transition-transform duration-700"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
-
-                            {/* Glass morphism overlay */}
-                            <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px]"></div>
-
-                            {/* Play button with enhanced effects */}
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="relative">
-                                    {/* Pulsing rings */}
-                                    <div className="absolute inset-0 bg-[#176b98]/30 rounded-full animate-ping"></div>
-                                    <div className="absolute inset-0 bg-[#176b98]/20 rounded-full animate-pulse"></div>
-
-                                    <div className="relative bg-white/20 backdrop-blur-md rounded-full p-8 hover:bg-[#176b98]/80 transition-all duration-300 hover:scale-110 cursor-pointer border-2 border-white/40 hover:border-white shadow-[0_10px_40px_rgba(23,107,152,0.4)]">
-                                        <div className="w-0 h-0 border-l-[28px] border-l-white border-t-[20px] border-t-transparent border-b-[20px] border-b-transparent ml-2"></div>
-                                    </div>
-                                </div>
+                        <div className="relative">
+                            <div className="relative aspect-video rounded-3xl overflow-hidden shadow-[0_20px_80px_rgba(23,107,152,0.3)] bg-gray-100 border border-gray-200/50">
+                                <iframe
+                                    key={currentVideo}
+                                    src={videos[currentVideo]}
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 'none', overflow: 'hidden' }}
+                                    scrolling="no"
+                                    frameBorder="0"
+                                    allowFullScreen={true}
+                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                    className="absolute inset-0 w-full h-full"
+                                ></iframe>
                             </div>
 
-                            {/* Content overlay with glass morphism */}
-                            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-sm">
-                                <div className="relative z-10">
-                                    <div className="inline-block px-4 py-1 bg-[#176b98]/80 backdrop-blur-sm rounded-full text-white text-xs font-bold mb-3 border border-white/20">
-                                        🎥 VIDEO NEWS
-                                    </div>
-                                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">LURS Research Breakthroughs 2025</h3>
-                                    <p className="text-gray-200">Latest developments in our research initiatives</p>
-                                </div>
-                            </div>
+                            {/* Navigation Buttons */}
+                            <button
+                                onClick={prevVideo}
+                                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-md rounded-full p-4 hover:bg-[#176b98]/80 transition-all duration-300 hover:scale-110 border border-white/20 hover:border-[#176b98] z-10"
+                                aria-label="Previous video"
+                            >
+                                <ChevronLeft className="text-white" size={24} />
+                            </button>
 
-                            {/* Decorative corner accents */}
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#176b98]/20 to-transparent"></div>
-                            <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#176b98]/20 to-transparent"></div>
+                            <button
+                                onClick={nextVideo}
+                                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-md rounded-full p-4 hover:bg-[#176b98]/80 transition-all duration-300 hover:scale-110 border border-white/20 hover:border-[#176b98] z-10"
+                                aria-label="Next video"
+                            >
+                                <ChevronRight className="text-white" size={24} />
+                            </button>
+
+                            {/* Video Indicators */}
+                            <div className="flex justify-center mt-8 space-x-3">
+                                {videos.map((_, index) => (
+                                    <button
+                                        key={index}
+                                        onClick={() => setCurrentVideo(index)}
+                                        className={`h-3 rounded-full transition-all duration-300 ${index === currentVideo
+                                                ? 'bg-[#176b98] w-12 shadow-lg shadow-[#176b98]/50'
+                                                : 'bg-gray-300 w-3 hover:bg-gray-400 hover:w-6'
+                                            }`}
+                                        aria-label={`Go to video ${index + 1}`}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Video Counter */}
+                        <div className="text-center mt-6">
+                            <p className="text-gray-600 font-medium">
+                                Video {currentVideo + 1} of {videos.length}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -649,6 +824,19 @@ const Sections = () => {
 
                 .animate-spin-slow {
                     animation: spin-slow 20s linear infinite;
+                }
+
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                    }
+                    to {
+                        opacity: 1;
+                    }
+                }
+
+                .animate-fadeIn {
+                    animation: fadeIn 0.3s ease-in-out;
                 }
 
                 /* Backdrop blur support */
