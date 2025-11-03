@@ -36,10 +36,11 @@ const WebinarsSeminars = () => {
             speakerTitle: "Professor at Shahjalal University of Science and Technology, Department of Civil and Environmental Engineering",
             description: "Today, we successfully hosted the inspiring seminar \"Research Unveiled: Building Knowledge, Shaping Futures,\" featuring the esteemed Dr. Muhammad Saiful Islam, Professor at Shahjalal University of Science and Technology, Department of Civil and Environmental Engineering. The session was a remarkable opportunity to explore the profound impact of research in shaping a brighter tomorrow. We are thrilled to have had an engaging discussion and meaningful interactions with participants who showed great enthusiasm. A big thank you to everyone who attended and made this event a grand success. Together, we continue to celebrate the spirit of research and innovation! and we are looking forward to arrange more such seminars for you all and it will be only possible with the support.",
             images: [
-                "https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg",
-                "https://images.pexels.com/photos/256455/pexels-photo-256455.jpeg",
-                "https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg",
-                "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg"
+                "https://i.ibb.co.com/tTCrw1YW/seminar5-1.jpg",
+                "https://i.ibb.co.com/vvLBrYxZ/seminar3.jpg",
+                "https://i.ibb.co.com/RG0s4pZX/seminar4-1.jpg",
+
+
             ],
             stats: [
                 { label: "Participants", value: "50+", icon: Users },
@@ -56,11 +57,10 @@ const WebinarsSeminars = () => {
             speakerTitle: "Bangladesh Program Coordinator at Asia Justice & Rights (AJAR) & President of NILS Bangladesh",
             description: "Leading University Research Society (LURS) recently hosted an eventful session on the Art of Public Speaking, featuring the incredible Luthfunnahar Shancyi as our keynote speaker. The webinar saw a striking number of 100+ registrations, with students from over 15+ institutions. We're grateful to everyone who joined us in the webinar. Your enthusiasm and participation has made it a success! Luthfunnahar Shancyi is working at Asia Justice & Rights (AJAR) as a Bangladesh Program Coordinator. She is also the President of the Network for International Law Students (NILS) Bangladesh. She has completed her LL.B (Hons.) & LL.M from Southeast University. She is an early career researcher at the Centre for the Study of Genocide and Justice (CSGJ), Liberation War Museum (LWM). She worked as a researcher in the publication named \"The Testimony of Sixty on the crisis of Rohingyas in Myanmar.\" She contributed to \"The Rohingya Genocide: Compilation and Analysis of Survivors' Testimonies,\" published by the LWM. Luthfunnahar Shancyi is one of the International Association of Genocide Scholars (IAGS) members. She has worked as a researcher on a different research project by CSGJ, LWM. Miss. Shancyi has a gloried mooting career and achieved awards in various competitions. Specifically, she got the Champion & Best Advocate Award in the 1st NILS IHL Moot Court Competition. Ms. Shancyi's enthusiastic approach and expertise left our audience captivated and empowered them to become better communicators. Her strategies on becoming a good speaker, mastering body language, controlling the tone, and conquering stage fright were invaluable. She also conducted activities and suggested daily tasks for self-improvement. Our organisation Advisor Dr. Shafkat Kibria sir expressed his valuable remarks. Also, our President Abdus Samad Sumo and General Secretary Mahmudul Haque Jamil on behalf of the executive committee expressed their remarks towards the speaker and participants. Stay tuned for more engaging webinars and events from Leading University Research Society. Together, we'll continue to explore the fascinating world of knowledge and skills.",
             images: [
-                "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
-                "https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg",
-                "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg",
-                "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
-                "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg"
+                "https://i.ibb.co.com/GQQmD4YT/webinar1-1.jpg",
+                "https://i.ibb.co.com/nMqyqZbp/webinar2.jpg",
+                "https://i.ibb.co.com/1YVMPQPq/webinar4.jpg",
+
             ],
             stats: [
                 { label: "Registrations", value: "100+", icon: Users },
@@ -77,12 +77,9 @@ const WebinarsSeminars = () => {
             speakerTitle: "Founder of MECHAMIND, Former Lecturer at BracU and IUB",
             description: "On 16 October 2023, Our esteemed speaker, Salman Promon, Founder of MECHAMIND and Former Lecturer at BracU and IUB conducted an amazing online webinar on the Role of AI in Multidisciplinary and Integrated Research. All the participants were curious to know about the AI and it's future in our life and work. Our organisation Advisor Dr. Shafkat Kibria sir, Co-advisor Md. Saidur Rahman Kohinoor, President Abdus Samad Sumo and General Secretary Mahmudul Haque Jamil on behalf of the executive committee to express their remarks towards the speaker and participants. Stay tuned for more engaging webinars and events from LURS. Together, we'll continue to explore the fascinating world of knowledge and skills.",
             images: [
-                "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
-                "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg",
-                "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg",
-                "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
-                "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg",
-                "https://images.pexels.com/photos/8386422/pexels-photo-8386422.jpeg"
+                "https://i.ibb.co.com/Lh0JL5J3/secondwebinar1.jpg",
+                "https://i.ibb.co.com/23wVDZyv/secondwebinar2.jpg",
+
             ],
             stats: [
                 { label: "Participants", value: "80+", icon: Users },
@@ -173,44 +170,58 @@ const WebinarsSeminars = () => {
                         >
                             {/* Event Card */}
                             <div className="bg-white/70 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/20 overflow-hidden hover:shadow-3xl transition-all duration-700 group">
-                                {/* Banner image (optional) */}
-                                <div className="relative w-full h-48 md:h-64 overflow-hidden">
+                                {/* Hero Banner - Full Image Display */}
+                                <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
                                     <Image
-                                        src={event.banner || event.images[0]}
+                                        src={event.images[0]}
                                         alt={`${event.title} banner`}
                                         fill
-                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                                    {/* Subtle Gradient Overlay - Only at bottom */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+
+                                    {/* Minimal Badges at Top */}
+                                    <div className="absolute top-6 left-6 right-6 flex flex-wrap items-center gap-3">
+                                        <div className="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-black/40 backdrop-blur-md border border-white/30 text-white shadow-lg">
+                                            {event.type === 'seminar' ? (
+                                                <div className="flex items-center gap-2">
+                                                    <Mic className="w-3.5 h-3.5" />
+                                                    <span>{event.type}</span>
+                                                </div>
+                                            ) : (
+                                                <div className="flex items-center gap-2">
+                                                    <Play className="w-3.5 h-3.5" />
+                                                    <span>{event.type}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="flex items-center gap-2 text-white bg-black/40 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/30 text-xs font-semibold">
+                                            <Calendar className="w-3.5 h-3.5" />
+                                            <span>{event.date}</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                {/* Event Header */}
-                                <div className={`bg-gradient-to-r ${event.type === 'seminar' ? 'from-[var(--primary)] to-sky-600' : 'from-indigo-600 to-blue-600'} text-white p-10`}>
-                                    <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-                                        <div className="flex-1">
-                                            <div className="flex items-center gap-4 mb-4">
-                                                <div className={`px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider ${event.type === 'seminar' ? 'bg-white/20' : 'bg-white/25'} backdrop-blur-sm`}>
-                                                    {event.type}
-                                                </div>
-                                                <div className="flex items-center gap-2 text-blue-100">
-                                                    <Calendar className="w-5 h-5" />
-                                                    <span className="font-semibold">{event.date}</span>
-                                                </div>
+
+                                {/* Event Info Section - Below Banner */}
+                                <div className={`bg-gradient-to-r ${event.type === 'seminar' ? 'from-[var(--primary)] to-sky-600' : 'from-indigo-600 to-blue-600'} text-white p-8 md:p-10`}>
+                                    {/* Event Title */}
+                                    <h4 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                                        {event.title}
+                                    </h4>
+
+                                    {/* Speaker Info */}
+                                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                                        <div className="flex items-start gap-4">
+                                            <div className="bg-white/20 rounded-full p-3 flex-shrink-0">
+                                                <Users className="w-6 h-6 text-white" />
                                             </div>
-                                            <h4 className="text-4xl md:text-5xl font-bold mb-4 group-hover:scale-105 transition-transform duration-300">
-                                                {event.title}
-                                            </h4>
-                                            <div className="mb-3">
-                                                <h5 className="text-2xl font-bold text-blue-100 mb-2">{event.speaker}</h5>
-                                                <p className="text-xl text-blue-200">{event.speakerTitle}</p>
+                                            <div className="flex-1">
+                                                <p className="text-sm text-blue-100 mb-1 uppercase tracking-wide font-semibold">Featured Speaker</p>
+                                                <h5 className="text-xl md:text-2xl font-bold text-white mb-2">{event.speaker}</h5>
+                                                <p className="text-base md:text-lg text-blue-100 leading-relaxed">{event.speakerTitle}</p>
                                             </div>
                                         </div>
-                                        {/* <div className="bg-white/20 backdrop-blur-sm rounded-3xl p-6">
-                                            {event.type === 'seminar' ? (
-                                                <Mic className="w-16 h-16 text-white animate-pulse" />
-                                            ) : (
-                                                <Play className="w-16 h-16 text-white" />
-                                            )}
-                                        </div> */}
                                     </div>
                                 </div>
 

@@ -55,10 +55,10 @@ We would like to express our heartfelt gratitude to our respected keynote speake
 
 A key part of our event was our founding executive committee announcement done by our respected Co-Advisor Md. Saidur Rahman Kohinoor Sir, with Abdus Samad Sumo from the Department of Law as our President and Mahmudul Haque Jamil from the Department of Civil Engineering as our General Secretary and other members in key roles.`,
             images: [
-                "https://images.pexels.com/photos/1260309/pexels-photo-1260309.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800"
+                "https://i.ibb.co.com/qLZW815L/inaugration-Ceremony-1.jpg",
+                "https://i.ibb.co.com/ZRVQn6JT/inaugration4.jpg",
+                "https://i.ibb.co.com/tgRdp3b/inaugration6.jpg",
+                "https://i.ibb.co.com/DPGrMfLr/inaugration8.jpg"
             ],
             highlights: [
                 { label: "Leadership", value: "Committee Formation", icon: Users },
@@ -77,10 +77,8 @@ We would also like to Congratulate our Honourable Advisor Dr. Shafkat Kibria Sir
 
 With his wonderful guidance and advice, we had a fruitful meeting, where we discussed our club's next endeavours and how best to represent it. The meeting also reflected the unity within our club and our hunger to take Leading University Research Society to a higher level.`,
             images: [
-                "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=800"
+                "https://i.ibb.co.com/d0kg4Gjd/First-GM-1.jpg",
+                
             ],
             highlights: [
                 { label: "Leadership", value: "Strategic Planning", icon: Users },
@@ -99,10 +97,11 @@ It was an inspiring day filled with enthusiasm, learning, and new beginnings. We
 
 A huge congratulations to the winners of our thrilling Quiz Game: 1st: Sunak Dhor Abir, 2nd: Humayra Islam, 3rd: Neha Das, 4th: Bikash Chokrabarti, 5th: Ohona, 6th: Tarin. Your sharp minds and quick responses truly amazed us! Lastly, a heartfelt thank you to all our General Members who joined us and contributed to making this event a grand success.`,
             images: [
-                "https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/1260309/pexels-photo-1260309.jpeg?auto=compress&cs=tinysrgb&w=800"
+                "https://i.ibb.co.com/xttRwGL4/associate1.jpg",
+                "https://i.ibb.co.com/wrpm4mD2/associate2.jpg",
+                "https://i.ibb.co.com/HDSpnPwy/associate4.jpg",
+                "https://i.ibb.co.com/8Lfz5zws/associate5.jpg",
+                "https://i.ibb.co.com/sfs5B2g/associate6.jpg",
             ],
             highlights: [
                 { label: "Leadership", value: "Member Engagement", icon: Users },
@@ -121,10 +120,12 @@ It was a bittersweet moment as we celebrated their achievements and welcomed the
 
 We extend our heartfelt appreciation to all the outgoing members for their dedication and hard work. Your legacy will continue to inspire us all. Also, a warm welcome to the new committee members. We are excited to see what you will achieve in the coming year.`,
             images: [
-                "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=800"
+                "https://i.ibb.co.com/s71H5b7/legacy-And-Genesis1.jpg",
+                "https://i.ibb.co.com/GvKzdHN0/legacyandgenesis2.jpg",
+                "https://i.ibb.co.com/Qj3hzL6t/legacyandgenesis3.jpg",
+                "https://i.ibb.co.com/Fb1TQQT3/legacyandgenesis5.jpg",
+                "https://i.ibb.co.com/5CFY6f7/legacyandgenesis6.jpg",
+
             ],
             highlights: [
                 { label: "Leadership", value: "Transition Ceremony", icon: Users },
@@ -143,10 +144,10 @@ Your contributions as a Co-advisor at Leading University Research Society have l
 
 Congratulations and best wishes from the entire Leading University Research Society family!`,
             images: [
-                "https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=800"
+                "https://i.ibb.co.com/gCxb8JW/farewelladvisor1.jpg",
+                "https://i.ibb.co.com/JRd0973V/farewelladvisor2.jpg",
+                "https://i.ibb.co.com/d4jMPFtG/farewelladvisor3.jpg",
+                "https://i.ibb.co.com/GLmHFv6/farewelladvisor4.jpg"
             ],
             highlights: [
                 { label: "Leadership", value: "Mentorship", icon: Users },
@@ -163,10 +164,8 @@ Congratulations and best wishes from the entire Leading University Research Soci
 
 His Vision and leadership will be inspiring and we're excited for the future ahead under HIS guidance. Here's to new beginnings and greater opportunities for students..!`,
             images: [
-                "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/1260309/pexels-photo-1260309.jpeg?auto=compress&cs=tinysrgb&w=800"
+                "https://i.ibb.co.com/gLbCZbcc/newvc.jpg",
+                
             ],
             highlights: [
                 { label: "Leadership", value: "New Vision", icon: Users },
@@ -185,10 +184,10 @@ The ceremony was honored by the presence of our respected Advisor – Dr. Shafka
 
 As we bid farewell to the Executive Committee (2024–2025), we extend our sincere appreciation for their remarkable service and wish them continued success in their academic and professional pursuits. Their legacy will undoubtedly guide and inspire the next generation of research leaders at LURS.`,
             images: [
-                "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=800"
+                "https://i.ibb.co.com/ZzjS4Hwm/genesis1.jpg",
+                "https://i.ibb.co.com/VY2rwCHP/genesis2.jpg",
+                "https://i.ibb.co.com/5xjf1qyT/genesis3.jpg",
+                "https://i.ibb.co.com/fVMwGJPr/genesis4-1.jpg"
             ],
             highlights: [
                 { label: "Leadership", value: "Committee Farewell", icon: Users },
