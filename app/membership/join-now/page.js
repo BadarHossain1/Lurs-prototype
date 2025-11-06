@@ -122,25 +122,48 @@ const JoinNowPage = () => {
         }
 
         setIsSubmitting(true);
-        // Simulate form submission
-        setTimeout(() => {
-            alert('Registration submitted successfully! We will contact you soon.');
-            setIsSubmitting(false);
-            // Reset form
-            setFormData({
-                fullName: '',
-                department: '',
-                semester: '',
-                mobileNumber: '',
-                whatsappNumber: '',
-                bloodGroup: '',
-                address: '',
-                gender: '',
-                dateOfBirth: '',
-                bkashNumber: '',
-                transactionId: ''
+        console.log('📤 Submitting membership application...', formData);
+
+        try {
+            const response = await fetch('/api/new-members', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
             });
-        }, 2000);
+
+            console.log('📥 Response status:', response.status);
+            const data = await response.json();
+            console.log('📥 Response data:', data);
+
+            if (data.success) {
+                console.log('✅ Application submitted! ID:', data.data._id);
+                alert('✅ Registration submitted successfully!\n\nWe will review your application and contact you soon.\n\nYour Application ID: ' + data.data._id);
+                // Reset form
+                setFormData({
+                    fullName: '',
+                    department: '',
+                    semester: '',
+                    mobileNumber: '',
+                    whatsappNumber: '',
+                    bloodGroup: '',
+                    address: '',
+                    gender: '',
+                    dateOfBirth: '',
+                    bkashNumber: '',
+                    transactionId: ''
+                });
+            } else {
+                console.error('❌ Submission failed:', data.message);
+                alert('❌ Failed to submit application: ' + data.message + '\n\nPlease try again.');
+            }
+        } catch (error) {
+            console.error('❌ Error submitting application:', error);
+            alert('❌ An error occurred: ' + error.message + '\n\nPlease try again later.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -330,13 +353,14 @@ const JoinNowPage = () => {
                                                     }`}
                                             >
                                                 <option value="">Select Department</option>
+                                                <option value="CSE">Civil Engineering</option>
                                                 <option value="CSE">Computer Science & Engineering</option>
                                                 <option value="EEE">Electrical & Electronic Engineering</option>
                                                 <option value="BBA">Business Administration</option>
-                                                <option value="English">English</option>
+                                                <option value="English">English And Literature</option>
                                                 <option value="LAW">Law</option>
-                                                <option value="Pharmacy">Pharmacy</option>
-                                                <option value="Others">Others</option>
+                                                <option value="IST">Islamic Studies</option>
+                                                <option value="PublicHealth">Public Health</option>
                                             </select>
                                             {formErrors.department && <p className="text-red-500 text-sm mt-1">{formErrors.department}</p>}
                                         </div>

@@ -112,57 +112,41 @@ const CulturalSocialPage = () => {
                         </p>
                     </div>
 
-                    {/* Event 1: Iftar Mahfil 2023 - Different Layout Style (moved first) */}
+                    {/* Event 1: Iftar Mahfil 2023 - Card Style matching Event 2 */}
                     <div
                         id="event-2023"
                         data-animate
                         className={`mb-24 transform transition-all duration-1000 ${isVisible['event-2023'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-80'
                             }`}
                     >
-                        <div className="relative">
-                            {/* Background Decoration */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-sky-50 rounded-3xl transform -rotate-1"></div>
+                        <div className="bg-white/70 backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-700 group">
 
-                            <div className="relative bg-white/90 backdrop-blur-lg rounded-3xl overflow-hidden shadow-2xl border border-blue-100 hover:shadow-3xl transition-all duration-700">
-
-                                {/* Top Banner */}
-                                <div className="relative h-48 md:h-64 overflow-hidden">
-                                    <Image
-                                        src="https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                                        alt="Iftar Mahfil 2023"
-                                        fill
-                                        className="object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-
-                                    {/* Floating Date Badge */}
-                                    <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md rounded-2xl px-6 py-3 shadow-xl">
-                                        <div className="flex items-center gap-3">
-                                            <Calendar className="w-5 h-5 text-[var(--primary)]" />
-                                            <span className="font-bold text-gray-900">15 April 2023</span>
-                                        </div>
+                            {/* Event Header */}
+                            <div className="relative bg-gradient-to-r from-[var(--primary)] via-sky-600 to-blue-600 text-white p-8 md:p-12">
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                                <div className="relative z-10">
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <Calendar className="w-6 h-6" />
+                                        <span className="text-lg font-semibold">15 April 2023</span>
                                     </div>
+                                    <h4 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 group-hover:scale-105 transition-transform duration-300">
+                                        First Iftar Mahfil - LURS Inaugural Event
+                                    </h4>
+                                    <p className="text-xl md:text-2xl text-blue-100 font-medium flex items-center gap-2">
+                                        <MapPin className="w-5 h-5" />
+                                        Spicy Restaurant, Sylhet
+                                    </p>
                                 </div>
+                            </div>
 
-                                {/* Content Section */}
-                                <div className="p-8 md:p-12">
+                            {/* Content Grid */}
+                            <div className="grid lg:grid-cols-2 gap-8 p-8 md:p-12">
 
-                                    {/* Title */}
-                                    <div className="mb-8">
-                                        <h4 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 hover:text-[var(--primary)] transition-colors duration-300">
-                                            First Iftar Mahfil - LURS Inaugural Event
-                                        </h4>
-                                        <div className="flex items-center gap-2 text-sky-600">
-                                            <MapPin className="w-4 h-4" />
-                                            <span className="font-medium">Spicy Restaurant, Sylhet</span>
-                                        </div>
-                                    </div>
-
-                                    {/* Two Column Layout */}
-                                    <div className="grid md:grid-cols-3 gap-8">
-
-                                        {/* Main Content - 2 columns */}
-                                        <div className="md:col-span-2 space-y-4">
+                                {/* Left: Content */}
+                                <div className="space-y-6">
+                                    <div className="flex items-start gap-3">
+                                        <div className="w-1 h-full bg-gradient-to-b from-[var(--primary)] to-blue-600 rounded-full"></div>
+                                        <div className="flex-1 space-y-4">
                                             <p className="text-gray-700 leading-relaxed">
                                                 Leading University Research Society (LURS) organized a first event through first Iftar Mahfil today; 15th April 2023. Our honorable LURS Advisor &apos;Shafkat Kibria&apos; sir, honorable university Proctor, &apos;Rana M. Luthfur Rahman Pir&apos; sir, and members of LURS were present there.
                                             </p>
@@ -176,55 +160,63 @@ const CulturalSocialPage = () => {
                                                 Overall, the Iftar Mahfil arranged by LURS was a successful event at Spicy Restaurant, Sylhet. Which brought together the members of the society and strengthened the spirit of brotherhood and unity among them.
                                             </p>
                                         </div>
+                                    </div>
 
-                                        {/* Sidebar - 1 column */}
-                                        <div className="space-y-4">
+                                    {/* Event Highlights */}
+                                    <div className="bg-gradient-to-br from-[var(--primary)]/5 to-sky-50 rounded-2xl p-6 border border-[var(--primary)]/10">
+                                        <h5 className="font-bold text-lg text-gray-900 mb-4 flex items-center gap-2">
+                                            <Sparkles className="w-5 h-5 text-[var(--primary)] animate-pulse" />
+                                            Event Highlights
+                                        </h5>
+                                        <ul className="space-y-2 text-gray-700">
+                                            <li className="flex items-start gap-2">
+                                                <Star className="w-4 h-4 text-[var(--primary)] mt-1 flex-shrink-0" />
+                                                <span>First official LURS event</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <Star className="w-4 h-4 text-[var(--primary)] mt-1 flex-shrink-0" />
+                                                <span>Ramadan celebration with unity</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <Star className="w-4 h-4 text-[var(--primary)] mt-1 flex-shrink-0" />
+                                                <span>Strategic planning discussions</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <Star className="w-4 h-4 text-[var(--primary)] mt-1 flex-shrink-0" />
+                                                <span>Building research community</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
 
-                                            {/* Highlights Box */}
-                                            <div className="bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-6 border border-blue-100">
-                                                <h5 className="font-bold text-lg text-gray-900 mb-4 flex items-center gap-2">
-                                                    <Sparkles className="w-5 h-5 text-sky-600 animate-pulse" />
-                                                    Event Highlights
-                                                </h5>
-                                                <ul className="space-y-3 text-sm text-gray-700">
-                                                    <li className="flex items-start gap-2">
-                                                        <div className="w-2 h-2 rounded-full bg-sky-500 mt-1.5"></div>
-                                                        <span>First official LURS event</span>
-                                                    </li>
-                                                    <li className="flex items-start gap-2">
-                                                        <div className="w-2 h-2 rounded-full bg-sky-500 mt-1.5"></div>
-                                                        <span>Ramadan celebration with unity</span>
-                                                    </li>
-                                                    <li className="flex items-start gap-2">
-                                                        <div className="w-2 h-2 rounded-full bg-sky-500 mt-1.5"></div>
-                                                        <span>Strategic planning discussions</span>
-                                                    </li>
-                                                    <li className="flex items-start gap-2">
-                                                        <div className="w-2 h-2 rounded-full bg-sky-500 mt-1.5"></div>
-                                                        <span>Building research community</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                {/* Right: Image and Stats */}
+                                <div className="space-y-4">
+                                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl group/image">
+                                        <Image
+                                            src="https://i.ibb.co.com/v4NCLqsN/iftar2023-1.jpg"
+                                            alt="Iftar Mahfil 2023"
+                                            fill
+                                            className="object-cover transition-transform duration-700 group-hover/image:scale-110"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                                    </div>
 
-                                            {/* Image Gallery Mini */}
-                                            <div className="grid grid-cols-2 gap-2">
-                                                <div className="relative aspect-square rounded-xl overflow-hidden group/img">
-                                                    <Image
-                                                        src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400"
-                                                        alt="Event moment 1"
-                                                        fill
-                                                        className="object-cover group-hover/img:scale-110 transition-transform duration-500"
-                                                    />
-                                                </div>
-                                                <div className="relative aspect-square rounded-xl overflow-hidden group/img">
-                                                    <Image
-                                                        src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=400"
-                                                        alt="Event moment 2"
-                                                        fill
-                                                        className="object-cover group-hover/img:scale-110 transition-transform duration-500"
-                                                    />
-                                                </div>
-                                            </div>
+                                    {/* Stats Cards */}
+                                    <div className="grid grid-cols-3 gap-3">
+                                        <div className="bg-gradient-to-br from-[var(--primary)]/10 to-sky-50 rounded-xl p-4 text-center hover:scale-105 transition-transform duration-300">
+                                            <Award className="w-6 h-6 text-[var(--primary)] mx-auto mb-2" />
+                                            <div className="text-2xl font-bold text-gray-900">1st</div>
+                                            <div className="text-xs text-gray-600 uppercase">Event</div>
+                                        </div>
+                                        <div className="bg-gradient-to-br from-sky-100 to-blue-50 rounded-xl p-4 text-center hover:scale-105 transition-transform duration-300">
+                                            <Heart className="w-6 h-6 text-sky-600 mx-auto mb-2 animate-pulse" />
+                                            <div className="text-2xl font-bold text-gray-900">Unity</div>
+                                            <div className="text-xs text-gray-600 uppercase">Spirit</div>
+                                        </div>
+                                        <div className="bg-gradient-to-br from-blue-100 to-sky-50 rounded-xl p-4 text-center hover:scale-105 transition-transform duration-300">
+                                            <Users className="w-6 h-6 text-blue-600 mx-auto mb-2" />
+                                            <div className="text-2xl font-bold text-gray-900">2023</div>
+                                            <div className="text-xs text-gray-600 uppercase">Inaugural</div>
                                         </div>
                                     </div>
                                 </div>
@@ -315,7 +307,7 @@ const CulturalSocialPage = () => {
                                 <div className="space-y-4">
                                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl group/image">
                                         <Image
-                                            src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                            src="https://i.ibb.co.com/933z7Gdj/iftar20252-1.jpg"
                                             alt="Iftar Mahfil 2025"
                                             fill
                                             className="object-cover transition-transform duration-700 group-hover/image:scale-110"
@@ -327,7 +319,7 @@ const CulturalSocialPage = () => {
                                     <div className="grid grid-cols-3 gap-3">
                                         <div className="bg-gradient-to-br from-[var(--primary)]/10 to-sky-50 rounded-xl p-4 text-center hover:scale-105 transition-transform duration-300">
                                             <Users className="w-6 h-6 text-[var(--primary)] mx-auto mb-2" />
-                                            <div className="text-2xl font-bold text-gray-900">50+</div>
+                                            <div className="text-2xl font-bold text-gray-900">10+</div>
                                             <div className="text-xs text-gray-600 uppercase">Attendees</div>
                                         </div>
                                         <div className="bg-gradient-to-br from-sky-100 to-blue-50 rounded-xl p-4 text-center hover:scale-105 transition-transform duration-300">

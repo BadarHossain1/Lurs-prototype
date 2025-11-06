@@ -40,23 +40,23 @@ const DonationsPage = () => {
 
     const galleryImages = [
         {
-            src: "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=800",
+            src: "https://i.ibb.co.com/6ck9rSZJ/flood1-1.jpg",
             alt: "Food distribution to flood victims"
         },
         {
-            src: "https://images.pexels.com/photos/6647005/pexels-photo-6647005.jpeg?auto=compress&cs=tinysrgb&w=800",
+            src: "https://i.ibb.co.com/T5mVGpX/flood2-1.jpg",
             alt: "Students organizing relief efforts"
         },
         {
-            src: "https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800",
+            src: "https://i.ibb.co.com/s8Q6QbQ/flood3-1.jpg",
             alt: "Community receiving aid"
         },
         {
-            src: "https://images.pexels.com/photos/6647112/pexels-photo-6647112.jpeg?auto=compress&cs=tinysrgb&w=800",
+            src: "https://i.ibb.co.com/WW8pS5k1/flood4.jpg",
             alt: "Relief supplies distribution"
         },
         {
-            src: "https://images.pexels.com/photos/6646993/pexels-photo-6646993.jpeg?auto=compress&cs=tinysrgb&w=800",
+            src: "https://i.ibb.co.com/zWyPxN2g/flood5-1.jpg",
             alt: "Volunteer team effort"
         }
     ];

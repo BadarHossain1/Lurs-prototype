@@ -113,8 +113,8 @@ const NewsletterPublicationsPage = () => {
                         id="newsletter-launch"
                         data-animate
                         className={`transform transition-all duration-1000 ${isVisible["newsletter-launch"]
-                                ? "opacity-100 translate-y-0"
-                                : "opacity-0 translate-y-10"
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-10"
                             }`}
                     >
                         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -123,7 +123,7 @@ const NewsletterPublicationsPage = () => {
                                 <div className="absolute inset-0 bg-gradient-to-br from-[#166a98]/20 to-transparent rounded-3xl"></div>
                                 <div className="relative overflow-hidden rounded-3xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500">
                                     <Image
-                                        src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                                        src="https://i.ibb.co.com/Nd7xdhQV/newsletter.jpg"
                                         alt="LURS Newsletter Launch"
                                         width={800}
                                         height={600}
@@ -192,8 +192,8 @@ const NewsletterPublicationsPage = () => {
                         id="future-vision"
                         data-animate
                         className={`mt-24 transform transition-all duration-1000 ${isVisible["future-vision"]
-                                ? "opacity-100 translate-y-0"
-                                : "opacity-0 translate-y-10"
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-10"
                             }`}
                     >
                         <div className="backdrop-blur-lg bg-white/90 rounded-3xl p-8 md:p-12 shadow-2xl border border-[#166a98]/20">

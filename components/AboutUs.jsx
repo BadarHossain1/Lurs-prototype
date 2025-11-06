@@ -255,8 +255,8 @@ const AboutUs = () => {
                                 </p>
                                 <p>
                                     We are guided by our dedicated advisors: <strong className="text-[#166a98]">Dr. Shafkat Kibria</strong>,
-                                    Assistant Professor, Department of Computer Science and Engineering (Advisor), and
-                                    <strong className="text-[#166a98]"> Md. Jamaner Rahaman</strong>, Lecturer, Department of Computer Science
+                                    Associate Professor, Department of Computer Science and Engineering (Advisor), and
+                                    <strong className="text-[#166a98]"> Md. Jamaner Rahaman</strong>, Assistant Professor, Department of Computer Science
                                     and Engineering (Co-Advisor).
                                 </p>
                                 

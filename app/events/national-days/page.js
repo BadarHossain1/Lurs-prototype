@@ -54,7 +54,7 @@ const NationalDaysPage = () => {
                 "During the 53rd anniversary of independence, Dr. Shafkat Kibria, the esteemed Adviser of the Leading University Research Society, was present at the wreath-laying ceremony.",
                 "At that time, Founding President Abdus Samad Sumo, Founding General Secretary Mahmudul Haque Jamil, Media & Content Development Secretary Nafi Chowdhury, and Associate Member Hamza were also present."
             ],
-            image: "https://images.pexels.com/photos/3184430/pexels-photo-3184430.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            image: "https://i.ibb.co.com/F4HNbZ0q/independenceday24-1.jpg"
         },
         {
             id: "event-2",
@@ -69,7 +69,7 @@ const NationalDaysPage = () => {
                 "On the occasion of Great Victory Day 2024, the Leading University Research Society paid deep respect to the martyrs of the Great War of Independence by laying a wreath at the Shaheed Minar.",
                 "Dr. Shafkat Kibria, Adviser, and Md. Jamaner Rahaman, Co-Adviser of the Leading University Research Society, were present during the wreath-laying ceremony."
             ],
-            image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            image: "https://i.ibb.co.com/MQvd1L3/victoryday202416-1.jpg"
         },
         {
             id: "event-3",
@@ -84,7 +84,7 @@ const NationalDaysPage = () => {
                 "On the occasion of International Mother Language Day, the Leading University Research Society paid deep respect to the language martyrs by laying a wreath at the Shaheed Minar.",
                 "Dr. Shafkat Kibria, Adviser, and Jamaner Rahman, Co-Adviser of the Leading University Research Society, along with the President, General Secretary, Treasurer, and other dignitaries were present during the wreath-laying ceremony."
             ],
-            image: "https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            image: "https://i.ibb.co.com/4RCs7mNX/languageday25.jpg"
         },
         {
             id: "event-4",
@@ -101,7 +101,7 @@ const NationalDaysPage = () => {
                 "The Leading University Research Society extends respect and love on this glorious day of the nation. Inspired by the spirit of the Liberation War, we pledge to contribute to nation-building. Our organization will continue as a beacon of research in Bangladesh's history, culture, and development.",
                 "Motivated by patriotic spirit, our goal is to create the researchers and leaders of tomorrow. On this joyous day of victory, we pledge to walk the path of truth, knowledge, and justice."
             ],
-            image: "https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            image: "https://i.ibb.co.com/d0SSct0Y/independenceday25.jpg"
         }
     ];
 

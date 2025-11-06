@@ -72,17 +72,40 @@ const ContactPage = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission
-        setTimeout(() => {
-            alert('Message sent successfully! We will get back to you soon.');
-            setIsSubmitting(false);
-            setContactForm({
-                name: '',
-                email: '',
-                subject: '',
-                message: ''
+        console.log('📤 Submitting contact form...', contactForm);
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(contactForm)
             });
-        }, 2000);
+
+            console.log('📥 Response status:', response.status);
+            const data = await response.json();
+            console.log('📥 Response data:', data);
+
+            if (data.success) {
+                console.log('✅ Contact saved successfully! ID:', data.data._id);
+                alert('✅ Message sent successfully! We will get back to you soon.\n\nYour message has been saved to our database.');
+                setContactForm({
+                    name: '',
+                    email: '',
+                    subject: '',
+                    message: ''
+                });
+            } else {
+                console.error('❌ Submission failed:', data.message);
+                alert('❌ Failed to send message: ' + data.message + '\n\nPlease try again.');
+            }
+        } catch (error) {
+            console.error('❌ Error submitting form:', error);
+            alert('❌ An error occurred: ' + error.message + '\n\nPlease try again later.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const contactInfo = [

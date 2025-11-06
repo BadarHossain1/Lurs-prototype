@@ -146,7 +146,7 @@ const AdvisorsCommittees = () => {
                                             <h3 className="text-2xl font-bold text-[#166a98] mb-2">Dr. Shafkat Kibria</h3>
                                             <div className="space-y-2">
                                                 <p className="text-[#166a98] font-semibold text-lg"> Advisor, LURS</p>
-                                                <p className="text-gray-600 font-medium">Assistant Professor</p>
+                                                <p className="text-gray-600 font-medium">Associate Professor</p>
                                                 <p className="text-gray-500">Department of Computer Science and Engineering</p>
                                             </div>
                                         </div>
@@ -201,7 +201,7 @@ const AdvisorsCommittees = () => {
                                             <h3 className="text-2xl font-bold text-[#166a98] mb-2">Md. Jamaner Rahaman</h3>
                                             <div className="space-y-2">
                                                 <p className="text-[#1a7eb0] font-semibold text-lg">Co-Advisor, LURS</p>
-                                                <p className="text-gray-600 font-medium">Lecturer</p>
+                                                <p className="text-gray-600 font-medium">Assistant Professor</p>
                                                 <p className="text-gray-500">Department of Computer Science and Engineering</p>
                                             </div>
                                         </div>

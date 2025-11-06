@@ -18,12 +18,40 @@ const ContactUs = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulated form submission
-        setTimeout(() => {
-            alert("Thank you for your message! We'll get back to you soon.");
-            setFormData({ name: "", email: "", subject: "", message: "" });
+        console.log('📤 Submitting contact form...', formData);
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            console.log('📥 Response status:', response.status);
+            const data = await response.json();
+            console.log('📥 Response data:', data);
+
+            if (data.success) {
+                console.log('✅ Contact saved successfully! ID:', data.data._id);
+                alert("✅ Thank you for your message! We'll get back to you soon.\n\nYour message has been saved to our database.");
+                setFormData({ name: "", email: "", subject: "", message: "" });
+
+                // Optional: Redirect to dashboard after 2 seconds
+                // setTimeout(() => {
+                //     window.location.href = '/dashboard/contacts';
+                // }, 2000);
+            } else {
+                console.error('❌ Submission failed:', data.message);
+                alert("❌ Failed to send message: " + data.message + "\n\nPlease try again.");
+            }
+        } catch (error) {
+            console.error('❌ Error submitting form:', error);
+            alert("❌ An error occurred: " + error.message + "\n\nPlease try again later.");
+        } finally {
             setIsSubmitting(false);
-        }, 2000);
+        }
     };
 
     const handleChange = (e) => {
