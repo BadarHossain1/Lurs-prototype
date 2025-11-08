@@ -46,8 +46,8 @@ const InternationalRepresentation = () => {
                 "Strengthened research culture commitment"
             ],
             images: [
-                "https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg",
-                "https://images.pexels.com/photos/256455/pexels-photo-256455.jpeg"
+                "https://i.ibb.co.com/QFc9pMkZ/rurs-1.jpg",
+                "https://i.ibb.co.com/Q3BfXL6H/rurs2.jpg"
             ]
         }
     ];
