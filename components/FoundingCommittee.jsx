@@ -97,8 +97,8 @@ const FoundingCommittee = () => {
                         id="main-content"
                         data-animate
                         className={`grid lg:grid-cols-2 gap-16 items-center mb-20 transition-all duration-1000 ${isVisible["main-content"]
-                                ? "opacity-100 translate-y-0"
-                                : "opacity-0 translate-y-10"
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-10"
                             }`}
                     >
                         {/* Left side - Text Content */}
@@ -149,8 +149,8 @@ const FoundingCommittee = () => {
                         id="committee"
                         data-animate
                         className={`backdrop-blur-lg bg-white/90 p-8 rounded-3xl shadow-2xl border border-[#166a98]/20 transition-all duration-1000 ${isVisible["committee"]
-                                ? "opacity-100 translate-y-0"
-                                : "opacity-0 translate-y-10"
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-10"
                             }`}
                     >
                         <div className="flex items-center justify-center gap-3 mb-8">
@@ -260,8 +260,8 @@ const FoundingCommittee = () => {
                         id="cta"
                         data-animate
                         className={`mt-20 text-center transition-all duration-1000 ${isVisible["cta"]
-                                ? "opacity-100 translate-y-0"
-                                : "opacity-0 translate-y-10"
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-10"
                             }`}
                     >
                         <div className="relative overflow-hidden bg-gradient-to-r from-[#166a98] to-[#1a7eb0] text-white p-12 rounded-3xl shadow-2xl">
