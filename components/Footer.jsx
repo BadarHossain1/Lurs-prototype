@@ -192,7 +192,17 @@ lurs@lus.ac.bd</p>
                         <p className="text-gray-400 text-sm mb-4 md:mb-0">
                             © 2025 Leading University Research Society. All rights reserved.
                         </p>
-                        
+                        <p className="text-gray-400 text-sm">
+                            Developed By{" "}
+                            <Link 
+                                href="/development-team"
+                                className="relative inline-block text-[#176b98] font-semibold hover:text-white transition-colors duration-300 group/dev"
+                            >
+                                <span className="relative z-10">Badar Hossain</span>
+                                <span className="absolute inset-0 bg-gradient-to-r from-[#176b98] via-[#1a7eb0] to-[#176b98] opacity-0 group-hover/dev:opacity-100 blur-sm transition-opacity duration-300"></span>
+                                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover/dev:opacity-30 group-hover/dev:animate-shine"></span>
+                            </Link>
+                        </p>
                     </div>
 
                     {/* Decorative "Back to top" button */}
@@ -238,6 +248,15 @@ lurs@lus.ac.bd</p>
                     }
                 }
 
+                @keyframes shine {
+                    0% {
+                        transform: translateX(-100%) skewX(-15deg);
+                    }
+                    100% {
+                        transform: translateX(200%) skewX(-15deg);
+                    }
+                }
+
                 .animate-float {
                     animation: float 6s ease-in-out infinite;
                 }
@@ -248,6 +267,10 @@ lurs@lus.ac.bd</p>
 
                 .animate-spin-slow {
                     animation: spin-slow 30s linear infinite;
+                }
+
+                .animate-shine {
+                    animation: shine 1.5s ease-in-out infinite;
                 }
 
                 /* Backdrop blur support */

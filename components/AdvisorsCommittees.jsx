@@ -6,6 +6,12 @@ import { Users, Award, Sparkles, Briefcase } from "lucide-react";
 
 const AdvisorsCommittees = () => {
     const [isVisible, setIsVisible] = useState({});
+    const [committeeMembers, setCommitteeMembers] = useState({
+        "2023-2024": [],
+        "2024-2025": [],
+        "2025-2026": []
+    });
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -27,6 +33,37 @@ const AdvisorsCommittees = () => {
 
         return () => observer.disconnect();
     }, []);
+
+    useEffect(() => {
+        fetchCommitteeMembers();
+    }, []);
+
+    const fetchCommitteeMembers = async () => {
+        try {
+            const response = await fetch('/api/committee-members');
+            const data = await response.json();
+            
+            if (data.success) {
+                const grouped = {
+                    "2023-2024": [],
+                    "2024-2025": [],
+                    "2025-2026": []
+                };
+                
+                data.members.forEach(member => {
+                    if (grouped[member.year]) {
+                        grouped[member.year].push(member);
+                    }
+                });
+                
+                setCommitteeMembers(grouped);
+            }
+        } catch (error) {
+            console.error('Error fetching committee members:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <div className="min-h-screen bg-[#eef5fe] pt-20">
@@ -234,116 +271,214 @@ const AdvisorsCommittees = () => {
                         </div>
                     </div>
 
-                    {/* Founding Executive Committee Section */}
+                    {/* Executive Committees Section */}
+                    {/* Committee 2023-2024 */}
                     <div
-                        id="committee"
+                        id="committee-2023"
                         data-animate
-                        className={`backdrop-blur-lg bg-white/90 p-8 rounded-3xl shadow-2xl border border-[#166a98]/20 transition-all duration-1000 ${isVisible["committee"]
+                        className={`mb-20 transition-all duration-1000 ${isVisible["committee-2023"]
                                 ? "opacity-100 translate-y-0"
                                 : "opacity-0 translate-y-10"
                             }`}
                     >
-                        <div className="flex items-center justify-center gap-3 mb-8">
-                            <Users className="w-8 h-8 text-[#166a98] animate-pulse" />
-                            <h3 className="text-3xl font-bold text-[#166a98] text-center">Founding Executive Committee (2023)</h3>
+                        <div className="text-center mb-12">
+                            <div className="flex items-center justify-center gap-3 mb-4">
+                                <Users className="w-8 h-8 text-[#166a98] animate-pulse" />
+                                <h3 className="text-3xl font-bold text-[#166a98]">LURS Executive Committee 2023-2024</h3>
+                            </div>
+                            <p className="text-gray-600 max-w-2xl mx-auto">The pioneering team that established the foundation of our research society</p>
                         </div>
 
-                        <div className="grid lg:grid-cols-2 gap-8">
-                            {/* Left column: Named officers */}
-                            <div>
-                                <dl className="space-y-4">
-                                    <div className="backdrop-blur-sm bg-white/50 p-3 rounded-lg hover:bg-[#166a98]/5 transition-all duration-300">
-                                        <dt className="text-sm font-semibold text-[#166a98]">President</dt>
-                                        <dd className="text-lg font-medium text-gray-800">Abdus Samad Sumo</dd>
-                                    </div>
-
-                                    <div className="backdrop-blur-sm bg-white/50 p-3 rounded-lg hover:bg-[#166a98]/5 transition-all duration-300">
-                                        <dt className="text-sm font-semibold text-[#166a98]">General Secretary</dt>
-                                        <dd className="text-lg font-medium text-gray-800">Mahmudul Haque Jamil</dd>
-                                    </div>
-
-                                    <div className="backdrop-blur-sm bg-white/50 p-3 rounded-lg hover:bg-[#166a98]/5 transition-all duration-300">
-                                        <dt className="text-sm font-semibold text-[#166a98]">Vice President (Academic)</dt>
-                                        <dd className="text-lg font-medium text-gray-800">Shahriyar Ahmod</dd>
-                                    </div>
-
-                                    <div className="backdrop-blur-sm bg-white/50 p-3 rounded-lg hover:bg-[#166a98]/5 transition-all duration-300">
-                                        <dt className="text-sm font-semibold text-[#166a98]">Vice President (Organizing)</dt>
-                                        <dd className="text-lg font-medium text-gray-800">Redwanul Haque</dd>
-                                    </div>
-
-                                    <div className="backdrop-blur-sm bg-white/50 p-3 rounded-lg hover:bg-[#166a98]/5 transition-all duration-300">
-                                        <dt className="text-sm font-semibold text-[#166a98]">Assistant General Secretary (Academic)</dt>
-                                        <dd className="text-lg font-medium text-gray-800">Mashura Chowdhury Mim</dd>
-                                    </div>
-
-                                    <div className="backdrop-blur-sm bg-white/50 p-3 rounded-lg hover:bg-[#166a98]/5 transition-all duration-300">
-                                        <dt className="text-sm font-semibold text-[#166a98]">Assistant General Secretary (Organizing)</dt>
-                                        <dd className="text-lg font-medium text-gray-800">Soumitra Pada Dey Mithun</dd>
-                                    </div>
-
-                                    <div className="backdrop-blur-sm bg-white/50 p-3 rounded-lg hover:bg-[#166a98]/5 transition-all duration-300">
-                                        <dt className="text-sm font-semibold text-[#166a98]">Treasurer</dt>
-                                        <dd className="text-lg font-medium text-gray-800">Saikat Chanda Sudip</dd>
-                                    </div>
-
-                                    <div className="backdrop-blur-sm bg-white/50 p-3 rounded-lg hover:bg-[#166a98]/5 transition-all duration-300">
-                                        <dt className="text-sm font-semibold text-[#166a98]">Secretary (Organizing wing)</dt>
-                                        <dd className="text-lg font-medium text-gray-800">Pranto Mozumder Proshanto</dd>
-                                    </div>
-
-                                    <div className="backdrop-blur-sm bg-white/50 p-3 rounded-lg hover:bg-[#166a98]/5 transition-all duration-300">
-                                        <dt className="text-sm font-semibold text-[#166a98]">Secretary (Scholarship & Higher Education wing)</dt>
-                                        <dd className="text-lg font-medium text-gray-800">Sabikunnahar Jannat</dd>
-                                    </div>
-
-                                    <div className="backdrop-blur-sm bg-white/50 p-3 rounded-lg hover:bg-[#166a98]/5 transition-all duration-300">
-                                        <dt className="text-sm font-semibold text-[#166a98]">Secretary (Media & Content Development wing)</dt>
-                                        <dd className="text-lg font-medium text-gray-800">Dewan Sonubar Raza Chowdhury</dd>
-                                    </div>
-
-                                    <div className="backdrop-blur-sm bg-white/50 p-3 rounded-lg hover:bg-[#166a98]/5 transition-all duration-300">
-                                        <dt className="text-sm font-semibold text-[#166a98]">Secretary (Research & Career Development wing)</dt>
-                                        <dd className="text-lg font-medium text-gray-800">Md. Badrul Alom Tawsyat</dd>
-                                    </div>
-
-                                    <div className="backdrop-blur-sm bg-white/50 p-3 rounded-lg hover:bg-[#166a98]/5 transition-all duration-300">
-                                        <dt className="text-sm font-semibold text-[#166a98]">Assistant Secretary (Research & Career Development wing)</dt>
-                                        <dd className="text-lg font-medium text-gray-800">Shotabdi Das Puja</dd>
-                                    </div>
-
-                                    <div className="backdrop-blur-sm bg-white/50 p-3 rounded-lg hover:bg-[#166a98]/5 transition-all duration-300">
-                                        <dt className="text-sm font-semibold text-[#166a98]">Secretary (IT & Creative wing)</dt>
-                                        <dd className="text-lg font-medium text-gray-800">Nafisa Tasmiya</dd>
-                                    </div>
-
-                                    <div className="backdrop-blur-sm bg-white/50 p-3 rounded-lg hover:bg-[#166a98]/5 transition-all duration-300">
-                                        <dt className="text-sm font-semibold text-[#166a98]">Assistant Secretary (IT & Creative wing)</dt>
-                                        <dd className="text-lg font-medium text-gray-800">Nafisa Maliath</dd>
-                                    </div>
-                                </dl>
-                            </div>
-
-                            {/* Right column: Executive members grid + other founding members */}
-                            <div>
-                                <h4 className="text-xl font-semibold text-[#166a98] mb-4">Executive Members</h4>
-                                <div className="grid sm:grid-cols-2 gap-3 mb-6">
-                                    {[
-                                        'Faiza', 'Ali Ahmed Masum', 'Md. Rahy Bin Kamal', 'Md. Ali Hussain Sagor', 'Fardous Ahmed Siam', 'Sumaiya Islam', 'Mohosin Ahmed', 'Refah Taspia Chowdhury', 'Sumaiya Akter', 'Sajib Chanda', 'Puja Rani Nath', 'Aziza Ara Jagirdar', 'Hadia Akter Ritu', 'Md. Tazwar Rahman Chowdhury', 'Dipongkar Deb', 'Md. Atikur Rahman Joy', 'Asfarur Rahman Chowdhury'
-                                    ].map((name, index) => (
-                                        <div key={name} className="px-4 py-3 backdrop-blur-sm bg-white/50 rounded-lg border border-[#166a98]/20 text-gray-800 hover:bg-[#166a98]/10 hover:border-[#166a98]/40 transition-all duration-300 transform hover:scale-105 cursor-pointer group">
-                                            <span className="group-hover:text-[#166a98] transition-colors duration-200">{name}</span>
-                                        </div>
-                                    ))}
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                            {loading ? (
+                                <div className="col-span-full text-center py-12">
+                                    <p className="text-gray-600">Loading members...</p>
                                 </div>
+                            ) : committeeMembers["2023-2024"].length === 0 ? (
+                                <div className="col-span-full text-center py-12">
+                                    <p className="text-gray-600">No members added yet for this committee</p>
+                                </div>
+                            ) : (
+                                committeeMembers["2023-2024"].map((member, index) => (
+                                    <div
+                                        key={member._id || index}
+                                        className="group relative backdrop-blur-xl bg-gradient-to-br from-white via-white to-blue-50/30 rounded-3xl shadow-xl overflow-hidden border-2 border-[#166a98]/30 hover:border-[#166a98] transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-[#166a98]/20"
+                                        style={{ animationDelay: `${index * 50}ms` }}
+                                    >
+                                        {/* Decorative corner accent */}
+                                        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#166a98]/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        
+                                        {/* Shine effect */}
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/0 to-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                                        
+                                        <div className="relative overflow-hidden rounded-t-3xl">
+                                            <Image
+                                                src={member.image}
+                                                alt={member.name}
+                                                width={250}
+                                                height={250}
+                                                className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700 filter group-hover:brightness-110"
+                                            />
+                                            {/* Gradient overlay */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-[#166a98] via-[#166a98]/50 to-transparent opacity-40 group-hover:opacity-70 transition-opacity duration-500"></div>
+                                            
+                                            {/* Animated border on image */}
+                                            <div className="absolute inset-0 border-b-4 border-[#166a98] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                                        </div>
+                                        
+                                        <div className="relative p-5 text-center bg-gradient-to-b from-transparent to-white/50">
+                                            <div className="mb-2 transform group-hover:scale-105 transition-transform duration-300">
+                                                <h4 className="font-bold text-gray-900 text-base mb-1 group-hover:text-[#166a98] transition-colors duration-300 leading-tight">{member.name}</h4>
+                                                <div className="h-0.5 w-12 bg-gradient-to-r from-transparent via-[#166a98] to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                            </div>
+                                            <p className="text-xs text-gray-600 font-medium leading-tight px-2 group-hover:text-[#166a98]/80 transition-colors duration-300">{member.designation}</p>
+                                            
+                                            {/* Bottom accent line */}
+                                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#166a98] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                                        </div>
+                                    </div>
+                                ))
+                            )}
+                        </div>
+                    </div>
 
-                                <h4 className="text-xl font-semibold text-[#166a98] mb-4">Other Founding Members</h4>
-                                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                    <li className="hover:text-[#166a98] transition-colors duration-200 cursor-pointer">Sadia Ahad</li>
-                                    <li className="hover:text-[#166a98] transition-colors duration-200 cursor-pointer">Mahfuz Hussain</li>
-                                    <li className="hover:text-[#166a98] transition-colors duration-200 cursor-pointer">Joynul Hussain Tuhin</li>
-                                </ul>
+                    {/* Committee 2024-2025 */}
+                    <div
+                        id="committee-2024"
+                        data-animate
+                        className={`mb-20 transition-all duration-1000 ${isVisible["committee-2024"]
+                                ? "opacity-100 translate-y-0"
+                                : "opacity-0 translate-y-10"
+                            }`}
+                    >
+                        <div className="text-center mb-12">
+                            <div className="flex items-center justify-center gap-3 mb-4">
+                                <Sparkles className="w-8 h-8 text-[#1a7eb0] animate-pulse" />
+                                <h3 className="text-3xl font-bold text-[#1a7eb0]">LURS Executive Committee 2024-2025</h3>
                             </div>
+                            <p className="text-gray-600 max-w-2xl mx-auto">Building on our legacy with innovation and dedication</p>
+                        </div>
+
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                            {loading ? (
+                                <div className="col-span-full text-center py-12">
+                                    <p className="text-gray-600">Loading members...</p>
+                                </div>
+                            ) : committeeMembers["2024-2025"].length === 0 ? (
+                                <div className="col-span-full text-center py-12">
+                                    <p className="text-gray-600">No members added yet for this committee</p>
+                                </div>
+                            ) : (
+                                committeeMembers["2024-2025"].map((member, index) => (
+                                    <div
+                                        key={member._id || index}
+                                        className="group relative backdrop-blur-xl bg-gradient-to-br from-white via-white to-cyan-50/30 rounded-3xl shadow-xl overflow-hidden border-2 border-[#1a7eb0]/30 hover:border-[#1a7eb0] transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-[#1a7eb0]/20"
+                                        style={{ animationDelay: `${index * 50}ms` }}
+                                    >
+                                        {/* Decorative corner accent */}
+                                        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#1a7eb0]/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        
+                                        {/* Shine effect */}
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/0 to-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                                        
+                                        <div className="relative overflow-hidden rounded-t-3xl">
+                                            <Image
+                                                src={member.image}
+                                                alt={member.name}
+                                                width={250}
+                                                height={250}
+                                                className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700 filter group-hover:brightness-110"
+                                            />
+                                            {/* Gradient overlay */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-[#1a7eb0] via-[#1a7eb0]/50 to-transparent opacity-40 group-hover:opacity-70 transition-opacity duration-500"></div>
+                                            
+                                            {/* Animated border on image */}
+                                            <div className="absolute inset-0 border-b-4 border-[#1a7eb0] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                                        </div>
+                                        
+                                        <div className="relative p-5 text-center bg-gradient-to-b from-transparent to-white/50">
+                                            <div className="mb-2 transform group-hover:scale-105 transition-transform duration-300">
+                                                <h4 className="font-bold text-gray-900 text-base mb-1 group-hover:text-[#1a7eb0] transition-colors duration-300 leading-tight">{member.name}</h4>
+                                                <div className="h-0.5 w-12 bg-gradient-to-r from-transparent via-[#1a7eb0] to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                            </div>
+                                            <p className="text-xs text-gray-600 font-medium leading-tight px-2 group-hover:text-[#1a7eb0]/80 transition-colors duration-300">{member.designation}</p>
+                                            
+                                            {/* Bottom accent line */}
+                                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#1a7eb0] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                                        </div>
+                                    </div>
+                                ))
+                            )}
+                        </div>
+                    </div>
+
+                    {/* Committee 2025-2026 */}
+                    <div
+                        id="committee-2025"
+                        data-animate
+                        className={`mb-20 transition-all duration-1000 ${isVisible["committee-2025"]
+                                ? "opacity-100 translate-y-0"
+                                : "opacity-0 translate-y-10"
+                            }`}
+                    >
+                        <div className="text-center mb-12">
+                            <div className="flex items-center justify-center gap-3 mb-4">
+                                <Briefcase className="w-8 h-8 text-[#0d5a7f] animate-pulse" />
+                                <h3 className="text-3xl font-bold text-[#0d5a7f]">LURS Executive Committee 2025-2026</h3>
+                            </div>
+                            <p className="text-gray-600 max-w-2xl mx-auto">Leading the future of research excellence and academic innovation</p>
+                        </div>
+
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                            {loading ? (
+                                <div className="col-span-full text-center py-12">
+                                    <p className="text-gray-600">Loading members...</p>
+                                </div>
+                            ) : committeeMembers["2025-2026"].length === 0 ? (
+                                <div className="col-span-full text-center py-12">
+                                    <p className="text-gray-600">No members added yet for this committee</p>
+                                </div>
+                            ) : (
+                                committeeMembers["2025-2026"].map((member, index) => (
+                                    <div
+                                        key={member._id || index}
+                                        className="group relative backdrop-blur-xl bg-gradient-to-br from-white via-white to-indigo-50/30 rounded-3xl shadow-xl overflow-hidden border-2 border-[#0d5a7f]/30 hover:border-[#0d5a7f] transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-[#0d5a7f]/20"
+                                        style={{ animationDelay: `${index * 50}ms` }}
+                                    >
+                                        {/* Decorative corner accent */}
+                                        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#0d5a7f]/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        
+                                        {/* Shine effect */}
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/0 to-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                                        
+                                        <div className="relative overflow-hidden rounded-t-3xl">
+                                            <Image
+                                                src={member.image}
+                                                alt={member.name}
+                                                width={250}
+                                                height={250}
+                                                className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700 filter group-hover:brightness-110"
+                                            />
+                                            {/* Gradient overlay */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-[#0d5a7f] via-[#0d5a7f]/50 to-transparent opacity-40 group-hover:opacity-70 transition-opacity duration-500"></div>
+                                            
+                                            {/* Animated border on image */}
+                                            <div className="absolute inset-0 border-b-4 border-[#0d5a7f] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                                        </div>
+                                        
+                                        <div className="relative p-5 text-center bg-gradient-to-b from-transparent to-white/50">
+                                            <div className="mb-2 transform group-hover:scale-105 transition-transform duration-300">
+                                                <h4 className="font-bold text-gray-900 text-base mb-1 group-hover:text-[#0d5a7f] transition-colors duration-300 leading-tight">{member.name}</h4>
+                                                <div className="h-0.5 w-12 bg-gradient-to-r from-transparent via-[#0d5a7f] to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                            </div>
+                                            <p className="text-xs text-gray-600 font-medium leading-tight px-2 group-hover:text-[#0d5a7f]/80 transition-colors duration-300">{member.designation}</p>
+                                            
+                                            {/* Bottom accent line */}
+                                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#0d5a7f] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                                        </div>
+                                    </div>
+                                ))
+                            )}
                         </div>
                     </div>
 

@@ -9,7 +9,8 @@ import {
     Users, 
     Menu, 
     X,
-    LogOut
+    LogOut,
+    UserCog
 } from "lucide-react";
 import DashboardPasswordModal from "@/components/DashboardPasswordModal";
 
@@ -41,6 +42,11 @@ export default function DashboardLayout({ children }) {
             name: "New Members",
             href: "/dashboard/new-members",
             icon: Users
+        },
+        {
+            name: "Committee Members",
+            href: "/dashboard/committee-members",
+            icon: UserCog
         }
     ];
 

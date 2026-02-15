@@ -129,7 +129,7 @@ const FoundingCommittee = () => {
                         <div>
                             <div className="relative group overflow-hidden rounded-3xl shadow-2xl">
                                 <Image
-                                    src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                    src="/g_9.jpg"
                                     alt="Founding Committee Meeting"
                                     width={600}
                                     height={400}
