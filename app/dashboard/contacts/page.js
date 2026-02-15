@@ -12,6 +12,7 @@ export default function ContactsPage() {
 
     useEffect(() => {
         fetchContacts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [filter]);
 
     const fetchContacts = async () => {

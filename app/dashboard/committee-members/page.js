@@ -113,7 +113,7 @@ export default function CommitteeMembersPage() {
     };
 
     const handleDelete = async (id) => {
-        if (!confirm("Are you sure you want to delete this member?")) return;
+        if (!confirm('Are you sure you want to delete this member?')) return;
 
         try {
             const response = await fetch(`/api/committee-members?id=${id}`, {
@@ -428,7 +428,7 @@ export default function CommitteeMembersPage() {
                                 No committee members added yet
                             </p>
                             <p className="text-gray-500 text-sm mt-2">
-                                Click "Add Member" to get started
+                                Click &quot;Add Member&quot; to get started
                             </p>
                         </div>
                     )}
