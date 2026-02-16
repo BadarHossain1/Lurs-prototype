@@ -398,6 +398,148 @@ const Sections = () => {
                 </div>
             </section>
 
+            {/* Section 2.5 - LURS Committee 2025-2026 Panel */}
+            <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden" id="committee-panel" data-animate>
+                {/* Animated background elements */}
+                <div className="absolute inset-0 opacity-5">
+                    <div className="absolute top-20 left-20 text-8xl animate-float">👥</div>
+                    <div className="absolute bottom-20 right-20 text-8xl animate-float-delayed">🏆</div>
+                </div>
+
+                <div className="container max-w-7xl mx-auto px-4 relative z-10">
+                    <div className="text-center mb-16" data-animate>
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-gradient-text">
+                            LURS Committee <span className="text-[#176b98]">2025-2026 Panel</span>
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                            Meet the leadership team guiding LURS towards excellence
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+                        {/* President */}
+                        <div
+                            className="group relative"
+                            data-animate
+                            style={{
+                                opacity: isVisible['committee-panel'] ? 1 : 0,
+                                transform: isVisible['committee-panel'] ? 'translateY(0)' : 'translateY(50px)',
+                                transition: 'all 0.7s ease 0.1s'
+                            }}
+                        >
+                            <div className="relative bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden hover:shadow-[0_20px_60px_rgba(23,107,152,0.3)] transition-all duration-500 hover:-translate-y-4 hover:scale-105 border border-gray-200/50">
+                                {/* Circular Image Container */}
+                                <div className="relative w-48 h-48 mx-auto mt-8 mb-6">
+                                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#176b98] to-[#1a7fb8] p-1 group-hover:scale-110 transition-transform duration-500">
+                                        <div className="relative w-full h-full rounded-full overflow-hidden bg-white">
+                                            <Image
+                                                src="/President.jpg"
+                                                alt="Nibir Ray - President"
+                                                fill
+                                                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                            />
+                                        </div>
+                                    </div>
+                                    {/* Decorative ring */}
+                                    <div className="absolute -inset-2 rounded-full border-2 border-[#176b98]/20 group-hover:border-[#176b98]/40 transition-all duration-500"></div>
+                                </div>
+
+                                <div className="p-6 text-center">
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#176b98] transition-colors duration-300">
+                                        Nibir Ray
+                                    </h3>
+                                    <p className="text-[#176b98] font-semibold text-lg mb-4">
+                                        President
+                                    </p>
+                                    {/* Decorative element */}
+                                    <div className="w-16 h-1 bg-gradient-to-r from-transparent via-[#176b98] to-transparent mx-auto"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* General Secretary */}
+                        <div
+                            className="group relative"
+                            data-animate
+                            style={{
+                                opacity: isVisible['committee-panel'] ? 1 : 0,
+                                transform: isVisible['committee-panel'] ? 'translateY(0)' : 'translateY(50px)',
+                                transition: 'all 0.7s ease 0.2s'
+                            }}
+                        >
+                            <div className="relative bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden hover:shadow-[0_20px_60px_rgba(23,107,152,0.3)] transition-all duration-500 hover:-translate-y-4 hover:scale-105 border border-gray-200/50">
+                                {/* Circular Image Container */}
+                                <div className="relative w-48 h-48 mx-auto mt-8 mb-6">
+                                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#176b98] to-[#1a7fb8] p-1 group-hover:scale-110 transition-transform duration-500">
+                                        <div className="relative w-full h-full rounded-full overflow-hidden bg-white">
+                                            <Image
+                                                src="/General-Secretary.png"
+                                                alt="Khandkar Sayeed Ahmed - General Secretary"
+                                                fill
+                                                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                            />
+                                        </div>
+                                    </div>
+                                    {/* Decorative ring */}
+                                    <div className="absolute -inset-2 rounded-full border-2 border-[#176b98]/20 group-hover:border-[#176b98]/40 transition-all duration-500"></div>
+                                </div>
+
+                                <div className="p-6 text-center">
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#176b98] transition-colors duration-300">
+                                        Khandkar Sayeed Ahmed
+                                    </h3>
+                                    <p className="text-[#176b98] font-semibold text-lg mb-4">
+                                        General Secretary
+                                    </p>
+                                    {/* Decorative element */}
+                                    <div className="w-16 h-1 bg-gradient-to-r from-transparent via-[#176b98] to-transparent mx-auto"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Treasurer */}
+                        <div
+                            className="group relative"
+                            data-animate
+                            style={{
+                                opacity: isVisible['committee-panel'] ? 1 : 0,
+                                transform: isVisible['committee-panel'] ? 'translateY(0)' : 'translateY(50px)',
+                                transition: 'all 0.7s ease 0.3s'
+                            }}
+                        >
+                            <div className="relative bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden hover:shadow-[0_20px_60px_rgba(23,107,152,0.3)] transition-all duration-500 hover:-translate-y-4 hover:scale-105 border border-gray-200/50">
+                                {/* Circular Image Container */}
+                                <div className="relative w-48 h-48 mx-auto mt-8 mb-6">
+                                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#176b98] to-[#1a7fb8] p-1 group-hover:scale-110 transition-transform duration-500">
+                                        <div className="relative w-full h-full rounded-full overflow-hidden bg-white">
+                                            <Image
+                                                src="/Treasurer.jpg"
+                                                alt="Jyoti Prokash Anindya - Treasurer"
+                                                fill
+                                                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                            />
+                                        </div>
+                                    </div>
+                                    {/* Decorative ring */}
+                                    <div className="absolute -inset-2 rounded-full border-2 border-[#176b98]/20 group-hover:border-[#176b98]/40 transition-all duration-500"></div>
+                                </div>
+
+                                <div className="p-6 text-center">
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#176b98] transition-colors duration-300">
+                                        Jyoti Prokash Anindya
+                                    </h3>
+                                    <p className="text-[#176b98] font-semibold text-lg mb-4">
+                                        Treasurer
+                                    </p>
+                                    {/* Decorative element */}
+                                    <div className="w-16 h-1 bg-gradient-to-r from-transparent via-[#176b98] to-transparent mx-auto"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Section 3 - Upcoming Event */}
             <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-gray-50 relative overflow-hidden" id="upcoming-event" data-animate>
 
