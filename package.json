@@ -16,7 +16,7 @@
     "framer-motion": "^12.23.22",
     "lucide-react": "^0.492.0",
     "mongodb": "^7.0.0",
-    "next": "15.5.5",
+    "next": "15.5.7",
     "nodemon": "^3.1.10",
     "react": "^19.0.0",
     "react-countdown": "^2.3.6",
@@ -27,7 +27,7 @@
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "eslint": "^9",
-    "eslint-config-next": "15.5.5",
+    "eslint-config-next": "15.5.7",
     "tailwindcss": "^4"
   }
 }
